@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/javaee-investify-react.iml" filepath="$PROJECT_DIR$/javaee-investify-react.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skinny.iml" filepath="$PROJECT_DIR$/skinny.iml" />
     </modules>
   </component>
 </project>
