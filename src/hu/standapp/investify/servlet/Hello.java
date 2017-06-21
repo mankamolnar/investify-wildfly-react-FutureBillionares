@@ -3,10 +3,7 @@ package hu.standapp.investify.servlet;
 import hu.standapp.investify.model.User;
 
 import java.io.*;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -14,8 +11,8 @@ import javax.servlet.http.*;
 public class Hello extends HttpServlet {
 
     private String message;
-    @PersistenceUnit(name="bfsExampleUnit")
-    EntityManagerFactory emf;
+//    @PersistenceUnit(unitName="bfsExampleUnit")
+//    EntityManagerFactory emf;
 
     public void init() throws ServletException
     {
@@ -27,14 +24,7 @@ public class Hello extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("bfsExampleUnit");
-
-        // Set response content type
-        response.setContentType("text/html");
-
-        // Actual logic goes here.
-        PrintWriter out = response.getWriter();
-        out.println("<h1>" + message + "</h1>");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("bfsExampleUnit");
 
         EntityManager em = emf.createEntityManager();
         em.clear();
@@ -45,6 +35,13 @@ public class Hello extends HttpServlet {
         transaction.begin();
         em.persist(test);
         transaction.commit();
+
+        // Set response content type
+        response.setContentType("text/html");
+
+        // Actual logic goes here.
+        PrintWriter out = response.getWriter();
+        out.println("<h1>" + message + "</h1>");
 
     }
 
