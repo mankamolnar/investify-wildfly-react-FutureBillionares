@@ -29,6 +29,7 @@ public class Hello extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
+
         ExampleData.createExampleData();
 
         // Set response content type
