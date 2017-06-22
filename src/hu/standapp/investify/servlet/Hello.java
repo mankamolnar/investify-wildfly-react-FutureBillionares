@@ -1,27 +1,23 @@
 package hu.standapp.investify.servlet;
 
-import hu.standapp.investify.model.House;
-import hu.standapp.investify.model.User;
+import hu.standapp.investify.ExampleData;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.persistence.*;
 
 // Extend HttpServlet class
 public class Hello extends HttpServlet {
 
     private String message;
-//    @PersistenceUnit(unitName="bfsExampleUnit")
-//    EntityManagerFactory emf;
+    private final static Logger logger = LoggerFactory.getLogger(Hello.class);
+
 
     public void init() throws ServletException
     {
@@ -33,19 +29,7 @@ public class Hello extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("bfsExampleUnit");
-
-        EntityManager em = emf.createEntityManager();
-        em.clear();
-
-        User test = new User("mani", "hali", "hu", 0, true);
-        House testHouse = new House(1, 1, "h", "h", 1);
-
-        EntityTransaction transaction = em.getTransaction();
-        transaction.begin();
-        em.persist(test);
-        em.persist(testHouse);
-        transaction.commit();
+        ExampleData.createExampleData();
 
         // Set response content type
         response.setContentType("text/html");

@@ -1,5 +1,9 @@
 package hu.standapp.investify.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import sun.security.provider.SHA;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +22,8 @@ public class MoneyPool {
      *
      */
 
+    private final static Logger logger = LoggerFactory.getLogger(MoneyPool.class);
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
@@ -28,6 +34,7 @@ public class MoneyPool {
     public MoneyPool() {}
 
     public MoneyPool(int payedIn, int goal, int shareholdPrice) {
+        logger.info("Creating MoneyPool Object | Payed In: "+payedIn+", Goal: "+goal+", Sharehold Price: "+shareholdPrice);
         this.payedIn = payedIn;
         this.goal = goal;
         this.shareholdPrice = shareholdPrice;

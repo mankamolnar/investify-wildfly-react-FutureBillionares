@@ -1,5 +1,8 @@
 package hu.standapp.investify.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +13,7 @@ import javax.persistence.Id;
  */
 @Entity(name="Users")
 public class User {
+
     /**
      * @param id  of the User.
      * @param name Username for the user.
@@ -18,6 +22,10 @@ public class User {
      * @param cash the amount of virtual money of the User.
      * @param active will be false if user want to delete the account.
      */
+
+
+    private final static Logger logger = LoggerFactory.getLogger(User.class);
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
@@ -29,7 +37,9 @@ public class User {
 
     public User() {}
 
-    public User(String name, String password, String email, int cash) {
+    public User(String name, String password, String email) {
+        logger.info("Creating User Object | Name: "+name+", password: *****, Email: "+email);
+
         this.name = name;
         this.password = password;
         this.email = email;
