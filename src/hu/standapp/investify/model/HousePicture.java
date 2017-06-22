@@ -10,6 +10,12 @@ import java.util.Date;
  */
 @Entity
 public class HousePicture {
+    /**
+     * @param id of the HousePicture.
+     * @param house , id for the house.
+     * @param url access to the picture.
+     * @param description for the house.
+     */
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -28,6 +34,11 @@ public class HousePicture {
         this.url = url;
         this.description = description;
     }
+
+    /**
+     *
+     * Basic getters and setter for the HousePicture.
+     */
 
     public House getHouse() {
         return house;

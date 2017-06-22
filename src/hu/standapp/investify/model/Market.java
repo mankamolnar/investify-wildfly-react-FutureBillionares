@@ -9,7 +9,15 @@ import java.util.Date;
 
 @Entity
 public class Market {
-
+    /**
+     * @param id of the Market
+     * @param shareholdId , id of hte sharehold.
+     * @param shareholdForSale the part of the sharehold that the user want to sale.
+     * @param price of the sharehold that the user want to sale.
+     * @param startDate the date when the user made the sharhold for sale.
+     * @param endDate the date when the sharehold was sold.
+     * @param active is the sharehold for sale.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -31,6 +39,10 @@ public class Market {
         this.endDate = endDate;
         this.active = true;
     }
+
+    /**
+     *Basic getters and setters for the Market
+     */
 
     public int getShareholdForSale() {
         return shareholdForSale;

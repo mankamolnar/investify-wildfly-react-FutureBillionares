@@ -10,7 +10,14 @@ import javax.persistence.Id;
  */
 @Entity(name="Users")
 public class User {
-
+    /**
+     * @param id  of the User.
+     * @param name Username for the user.
+     * @param password password for the user.
+     * @param email of the user.
+     * @param cash the amount of virtual money of the User.
+     * @param active will be false if user want to delete the account.
+     */
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
@@ -22,13 +29,17 @@ public class User {
 
     public User() {}
 
-    public User(String name, String password, String email, int cash, boolean active) {
+    public User(String name, String password, String email, int cash) {
         this.name = name;
         this.password = password;
         this.email = email;
         this.cash = 0;
-        this.active = active;
+        this.active = true;
     }
+
+    /**
+     * Basic getters and setters for the User.
+     */
 
     public String getEmail() {
         return email;

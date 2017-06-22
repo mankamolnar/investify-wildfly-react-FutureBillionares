@@ -11,6 +11,14 @@ import javax.persistence.Id;
 @Entity
 public class House {
 
+    /**
+     * @param id of the House.
+     * @param area the whole area of the house.
+     * @param zipcode of the city.
+     * @param adress of the house.
+     * @param predictedIncome the foretold income for the house.
+     *
+     */
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
@@ -29,6 +37,11 @@ public class House {
         this.address = address;
         this.predictedIncome = predictedIncome;
     }
+
+    /**
+     * Basic getters and setters for the House.
+     *
+     */
 
     public int getArea() {
         return area;

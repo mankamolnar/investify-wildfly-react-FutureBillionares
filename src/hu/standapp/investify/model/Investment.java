@@ -10,6 +10,17 @@ import java.util.Date;
  */
 @Entity
 public class Investment {
+    /**
+     * @param id of the Investment.
+     * @param user , id of the User.
+     * @param mmoneyPool , id of the MoneyPool.
+     * @param sharehold the percent what the user bought from the house.
+     * @param price the price what the user invest so far.
+     * @param startDate the day of the pay in.
+     * @param endDate a half year from the startDate.
+     * @param closed represents that the user got the house or not.
+     *
+     */
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -42,6 +53,11 @@ public class Investment {
         this.endDate = end;
         this.closed = false;
     }
+
+    /**
+     *
+     * Basic getters and setters for the Investment.
+     */
 
     public int getPriceAll() {
         return price * sharehold;

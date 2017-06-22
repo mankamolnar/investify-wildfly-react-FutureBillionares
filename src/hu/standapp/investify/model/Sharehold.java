@@ -7,7 +7,14 @@ import javax.persistence.*;
  */
 @Entity
 public class Sharehold {
-
+    /**
+     * @param id of the Sharehold.
+     * @param houseId , id of the house.
+     * @param userId , id of the user.
+     * @param boughtPrice , the price that the user paid for the sharehold.
+     * @param soldPrice , the price that the user get for a the sharehold.
+     * @param shareHoldTotal , the percent of the house that the user own.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -29,6 +36,10 @@ public class Sharehold {
         this.shareHoldTotal = shareHoldTotal;
     }
 
+    /**
+     *Basic getters and setters for the Sharehold.
+     *
+     */
 
     public int getBoughtPrice() {
         return boughtPrice;
