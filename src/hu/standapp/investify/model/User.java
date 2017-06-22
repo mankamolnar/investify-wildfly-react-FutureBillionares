@@ -1,5 +1,8 @@
 package hu.standapp.investify.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +13,8 @@ import javax.persistence.Id;
  */
 @Entity(name="Users")
 public class User {
+
+    private final static Logger logger = LoggerFactory.getLogger(User.class);
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -22,7 +27,8 @@ public class User {
 
     public User() {}
 
-    public User(String name, String password, String email, int cash, boolean active) {
+    public User(String name, String password, String email, boolean active) {
+        logger.info("Creating User Object | Name: "+name+", password: *****, Email: "+email);
         this.name = name;
         this.password = password;
         this.email = email;

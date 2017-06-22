@@ -1,5 +1,8 @@
 package hu.standapp.investify.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +13,8 @@ import javax.persistence.Id;
  */
 @Entity
 public class House {
+
+    private final static Logger logger = LoggerFactory.getLogger(House.class);
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -23,6 +28,7 @@ public class House {
     public House() {}
 
     public House(int area, int zipCode, String city, String address, int predictedIncome) {
+        logger.info("Creating House Object | Area "+area+", Zip Code: " +zipCode+ ", City: "+city+", Adress: "+address+", Predicted Income: "+predictedIncome);
         this.area = area;
         this.zipCode = zipCode;
         this.city = city;
