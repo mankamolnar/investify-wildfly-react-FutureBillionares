@@ -9,7 +9,7 @@ import java.util.Date;
  * Created by matyi on 2017.06.22..
  */
 @Entity
-public class Investments {
+public class Investment {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -33,9 +33,9 @@ public class Investments {
     @Column(name = "Closed")
     private boolean closed;
 
-    public Investments() {}
+    public Investment() {}
 
-    public Investments(User user, MoneyPool moneypool, int sharehold, int price, Date start, Date end) {
+    public Investment(User user, MoneyPool moneypool, int sharehold, int price, Date start, Date end) {
         this.user = user;
         this.moneyPool = moneypool;
         this.sharehold = sharehold;
