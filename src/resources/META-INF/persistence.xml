@@ -7,6 +7,12 @@
     <persistence-unit name="bfsExampleUnit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>hu.standapp.investify.model.User</class>
+        <class>hu.standapp.investify.model.House</class>
+        <class>hu.standapp.investify.model.HousePicture</class>
+        <class>hu.standapp.investify.model.Sharehold</class>
+        <class>hu.standapp.investify.model.Market</class>
+        <class>hu.standapp.investify.model.Investment</class>
+        <class>hu.standapp.investify.model.MoneyPool</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
             <property name="hibernate.hbm2dll.auto" value="create-drop"/>
@@ -17,8 +23,8 @@
 
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/investify_fb"/>
-            <property name="javax.persistence.jdbc.user" value="gombaspeteer"/>
-            <property name="javax.persistence.jdbc.password" value="1953"/>
+            <property name="javax.persistence.jdbc.user" value="matyi"/>
+            <property name="javax.persistence.jdbc.password" value="matyi"/>
         </properties>
     </persistence-unit>
 

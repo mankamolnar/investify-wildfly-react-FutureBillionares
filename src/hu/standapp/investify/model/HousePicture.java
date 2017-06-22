@@ -15,7 +15,6 @@ public class HousePicture {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
     @OneToOne
-    @Column(name = "House_Id")
     private House house;
     @Column(name = "URL")
     private String url;

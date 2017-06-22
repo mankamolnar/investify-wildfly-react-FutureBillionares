@@ -1,5 +1,6 @@
 package hu.standapp.investify.servlet;
 
+import hu.standapp.investify.model.House;
 import hu.standapp.investify.model.User;
 
 
@@ -38,10 +39,12 @@ public class Hello extends HttpServlet {
         em.clear();
 
         User test = new User("mani", "hali", "hu", 0, true);
+        House testHouse = new House(1, 1, "h", "h", 1);
 
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
         em.persist(test);
+        em.persist(testHouse);
         transaction.commit();
 
         // Set response content type
