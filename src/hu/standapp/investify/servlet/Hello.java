@@ -2,10 +2,18 @@ package hu.standapp.investify.servlet;
 
 import hu.standapp.investify.model.User;
 
-import java.io.*;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceUnit;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.persistence.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
 
 // Extend HttpServlet class
 public class Hello extends HttpServlet {
