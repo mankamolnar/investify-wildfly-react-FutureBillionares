@@ -14,6 +14,13 @@ import javax.persistence.Id;
  */
 @Entity
 public class MoneyPool {
+    /**
+     * @param id of the MoneyPool.
+     * @param payedIn amount of the money paid in by users so far.
+     * @param goal the amount what we want to gather.
+     * @param shareholdPrice the unit price of the sharehold.
+     *
+     */
 
     private final static Logger logger = LoggerFactory.getLogger(MoneyPool.class);
 
@@ -32,6 +39,11 @@ public class MoneyPool {
         this.goal = goal;
         this.shareholdPrice = shareholdPrice;
     }
+
+    /**
+     *
+     * Basic getters and setter for the MoneyPool.
+     */
 
     public int getPayedIn() {
         return payedIn;
