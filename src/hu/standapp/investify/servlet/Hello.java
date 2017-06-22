@@ -1,7 +1,6 @@
 package hu.standapp.investify.servlet;
 
-import hu.standapp.investify.model.House;
-import hu.standapp.investify.model.User;
+import hu.standapp.investify.model.*;
 
 
 import javax.persistence.EntityManager;
@@ -38,13 +37,24 @@ public class Hello extends HttpServlet {
         EntityManager em = emf.createEntityManager();
         em.clear();
 
-        User test = new User("mani", "hali", "hu", 0, true);
-        House testHouse = new House(1, 1, "h", "h", 1);
+        User exampleUser = new User("mani", "hali", "hu", 0, true);
+        House exampleHouse = new House(1000,0000,"City city", "Address address", 1000000);
+        HousePicture exampleHousePicture = new HousePicture(exampleHouse, "URL", "Description");
+        MoneyPool exampleMoneyPool = new MoneyPool(0,0,1000000);
+        Sharehold exampleSharehold  = new Sharehold(exampleHouse, exampleUser, 10000,10000,40);
+        Market exampleMarket = new Market(exampleSharehold, 1,1, null,null);
+        Investment exampleInvestment = new Investment(exampleUser, exampleMoneyPool, 5, 1000, null,null);
+
 
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
-        em.persist(test);
-        em.persist(testHouse);
+        em.persist(exampleUser);
+        em.persist(exampleHouse);
+        em.persist(exampleHousePicture);
+        em.persist(exampleMoneyPool);
+        em.persist(exampleSharehold);
+        em.persist(exampleMarket);
+        em.persist(exampleInvestment);
         transaction.commit();
 
         // Set response content type
