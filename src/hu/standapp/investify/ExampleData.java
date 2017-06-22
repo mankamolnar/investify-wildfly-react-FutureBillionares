@@ -23,7 +23,7 @@ public class ExampleData {
         em.clear();
 
         logger.info("Creating example data");
-        User exampleUser = new User("mani", "hali", "hu", true);
+        User exampleUser = new User("mani", "hali", "hu");
         House exampleHouse = new House(1000,0000,"City city", "Address address", 1000000);
         HousePicture exampleHousePicture = new HousePicture(exampleHouse, "URL", "Description");
         MoneyPool exampleMoneyPool = new MoneyPool(0,0,1000000);
