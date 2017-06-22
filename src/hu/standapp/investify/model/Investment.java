@@ -1,5 +1,8 @@
 package hu.standapp.investify.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -10,6 +13,8 @@ import java.util.Date;
  */
 @Entity
 public class Investment {
+
+    private final static Logger logger = LoggerFactory.getLogger(Investment.class);
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -34,6 +39,8 @@ public class Investment {
     public Investment() {}
 
     public Investment(User user, MoneyPool moneypool, int sharehold, int price, Date start, Date end) {
+        logger.info("Creating Investment Object | MoneyPool: "+moneypool+", Sharehold: "+sharehold+
+                ", Price: "+price+", Start Date: "+start+", End Date: "+end);
         this.user = user;
         this.moneyPool = moneypool;
         this.sharehold = sharehold;

@@ -1,5 +1,8 @@
 package hu.standapp.investify.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,11 +13,13 @@ import java.util.Date;
 @Entity
 public class Market {
 
+    private final static Logger logger = LoggerFactory.getLogger(Market.class);
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    private Sharehold shareholdId;
+    private Sharehold sharehold;
     private int shareholdForSale;
     private int price;
     private Date startDate;
@@ -23,8 +28,10 @@ public class Market {
 
     public Market (){}
 
-    public Market(Sharehold shareholdId, int shareholdForSale, int price, Date startDate, Date endDate){
-        this.shareholdId = shareholdId;
+    public Market(Sharehold sharehold, int shareholdForSale, int price, Date startDate, Date endDate){
+        logger.info("Creating Market Object | Sharehold: "+sharehold+", Sharehold for sale: "+shareholdForSale+
+                ", Price: "+price+", Start date: "+startDate+", End date: "+endDate);
+        this.sharehold = sharehold;
         this.shareholdForSale = shareholdForSale;
         this.price = price;
         this.startDate = startDate;

@@ -1,5 +1,8 @@
 package hu.standapp.investify.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -10,6 +13,8 @@ import java.util.Date;
  */
 @Entity
 public class HousePicture {
+
+    private final static Logger logger = LoggerFactory.getLogger(HousePicture.class);
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -24,6 +29,7 @@ public class HousePicture {
     public HousePicture() {}
 
     public HousePicture(House house, String url, String description) {
+        logger.info("Creating HousePicture Object | House: "+house+", URL: "+url+", Description: "+description);
         this.house = house;
         this.url = url;
         this.description = description;
