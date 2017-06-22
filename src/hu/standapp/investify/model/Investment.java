@@ -15,10 +15,8 @@ public class Investment {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @Column(name = "User")
     private User user;
     @ManyToOne
-    @Column(name = "Money_Pool")
     private MoneyPool moneyPool;
     @Min(0)
     @Max(100)
