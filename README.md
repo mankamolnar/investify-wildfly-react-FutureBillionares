@@ -101,4 +101,67 @@ d.) Setup "npm run prod-build" command and hit OK!
 e.) Restart server.  
 (Now its probably compiling your React.jsx then starting WildFly [and compiling Java code as well... so time to roll! ;) ])
 
-###
+## II. Start developing in React!
+### 1. Create routes
+
+0.) Yep, you heard well, we gonna handle routes on the client side. One of the biggest features of React that it's able 
+handle routes. All of the /api routes will be handled on the SERVER side, and all of the routes that are related with 
+loading in a page of HTML will be handled on the CLIENT SIDE.  
+
+Separated and clean black magic :].
+
+a.) Open /src/resources/react/router.jsx
+><kep>
+    // *** ROUTER ***
+    ReactDOM.render((
+        <Router history={browserHistory}>
+            <Route path="/" component={Index} />
+            <Route path="/login" component={Index} />
+            <Route path="/logout" component={Index} />
+            <Route path="/faq" component={Index} />
+        </Router>
+    ), document.getElementById('app'));
+</kep>
+
+b.) Here ReactDOM starts in #app div!
+
+c.) Router xml structure: path -> url path, component -> {React.component.name}
+
+### 2. Create pages
+
+a.) open Index.jsx
+><c>
+    // *** PAGES ***
+    class Index extends React.Component {
+        constructor() {
+            super();
+            this.state = {loggedIn:false};
+            this.changeState = this.changeState.bind(this)
+        }
+    
+        changeState() {
+            console.log(this.state.loggedIn);
+            this.setState({loggedIn:!this.state.loggedIn});
+        }
+    
+        render() {
+            return (
+                <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState} />
+            );
+        }
+    }
+</c>
+
+b.) This is the first time you can see the good side of using ES6! Here we use "class" to define classes we can easily use extending and it also has a constructor method! Do you remember defining class and construct like "var MyClass = function(prop1) { this.pop1 = prop1; };". NEVER AGAIN! :]  
+
+c.) Every React.Component has render method as well. If any of the component's attributes changes it's state, React will change the content in the Virtual DOM, then compareing the Virtual DOM with the browser's DOM and changes the differences.  
+
+The point of this whole stuff that Virtual DOM is MUCH MUCH FASTER than the Browser's. So by calculating the differences in React's Virtual DOM and passing only the theese changes we save a lot of time!  
+
+DOM performance: n * n  
+VIRTUAL DOM performance: n  
+( ! ! ! )
+
+### 3. React "elements"
+
+

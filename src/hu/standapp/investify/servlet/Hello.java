@@ -29,7 +29,7 @@ public class Hello extends HttpServlet {
                 "    <title>Hello React</title>\n" +
                 "    <script type=\"text/javascript\" src=\"/static/react.js\"></script>\n" +
 //                "    <script type=\"text/javascript\" src=\"vendor/showdown.min.js\"></script>\n" +
-                "    <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n" +
+                "    <link href=\"https://bootswatch.com/sandstone/bootstrap.min.css\" rel=\"stylesheet\">\n" +
                 "\n" +
                 "</head>\n" +
                 "<body>\n" +
