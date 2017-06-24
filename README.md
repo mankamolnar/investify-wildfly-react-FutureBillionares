@@ -80,9 +80,13 @@ e.) Now we can test our npm and webpack configs by hitting "npm run prod-build"
     "Shiiiiiiit, all I see is redness on the screen!" Comment of the Author
 </c>
 
-+1) Now it probably compiled your React JSX to a bundle.js and bundle.map.js as well.   
-(I just realized that the extension for uncompiled react app is .jsx :] )  
-With the map.js the chrome console will be able show the error's place on an uncompiled readable
++1) Now it probably compiled your React JSX to a bundle.js and bundle.js.map as well.     
+With the js.map the chrome console will be able show the error's place on an uncompiled readable
 code even if it's running the minified unreadable version. Quite nice!
 
+(I just realized that the extension for uncompiled react app is .jsx, probably I missed it sometimes, sorry for that! :] )
+
 ### 4. Integrate Npm into IntelliJ
+[logo]: https://raw.githubusercontent.com/mankamolnar/investify-wildfly-react-FutureBillionares/feature/mankamolnar_integrate_react/Doc/01_edit_configurations.png "Edit configurations"  
+[logo]: https://github.com/mankamolnar/investify-wildfly-react-FutureBillionares/blob/feature/mankamolnar_integrate_react/Doc/02_add_panel.png?raw=true "Choose npm script"  
+[logo]: https://github.com/mankamolnar/investify-wildfly-react-FutureBillionares/blob/feature/mankamolnar_integrate_react/Doc/03_npm_script_add.png?raw=true "Add npm script"
