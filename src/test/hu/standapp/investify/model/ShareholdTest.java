@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class ShareholdTest {
 
-    User test = new User("mani", "hali", "hu", true);
+    User test = new User("mani", "hali", "hu");
     House testHouse = new House(1, 1, "h", "h", 1);
     Sharehold testShareHold = new Sharehold(testHouse, test, 1000, 2000, 20);
 
