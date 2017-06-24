@@ -22,9 +22,10 @@ public class Hello extends HttpServlet {
     public void init() throws ServletException
     {
         // Do required initialization
-        message = "<html>\n" +
+        message = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n" +
+                "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n" +
                 "<head>\n" +
-                "\n" +
+                "   <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">" +
                 "    <title>Hello React</title>\n" +
                 "    <script type=\"text/javascript\" src=\"/static/react.js\"></script>\n" +
 //                "    <script type=\"text/javascript\" src=\"vendor/showdown.min.js\"></script>\n" +

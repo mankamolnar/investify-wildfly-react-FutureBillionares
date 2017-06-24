@@ -80,7 +80,7 @@ e.) Now we can test our npm and webpack configs by hitting "npm run prod-build"
     "Shiiiiiiit, all I see is redness on the screen!" Comment of the Author
 </c>
 
-+1) Now it probably compiled your React JSX to a bundle.js and bundle.js.map as well.     
++1) Now it probably compiled your React JSX to a bundle.js and bundle.js.map as well. Don't worry! I gitignored them!   
 With the js.map the chrome console will be able show the error's place on an uncompiled readable
 code even if it's running the minified unreadable version. Quite nice!
 
@@ -99,4 +99,6 @@ d.) Setup "npm run prod-build" command and hit OK!
 ![alt text](https://raw.githubusercontent.com/mankamolnar/investify-wildfly-react-FutureBillionares/feature/mankamolnar_integrate_react/Doc/03_npm_script_add.png "Add npm script")
 
 e.) Restart server.  
-(Now its probably compiling your React.jsx then starting WildFly [and compiling Java code as well... so time to roll])
+(Now its probably compiling your React.jsx then starting WildFly [and compiling Java code as well... so time to roll! ;) ])
+
+###

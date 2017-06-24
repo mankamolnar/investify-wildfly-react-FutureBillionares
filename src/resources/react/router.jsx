@@ -16,13 +16,13 @@ class NavBar extends React.Component {
                     </div>
                     <div className="nav navbar-nav navbar-left">
                         <ul className="nav navbar-nav">
-                            <li><Link to="/">Főoldal</Link></li>
-                            <li><Link to="/faq">Rendszerünk működése</Link></li>
+                            <li><Link to="/">Home page</Link></li>
+                            <li><Link to="/faq">F.A.Q.</Link></li>
                         </ul>
                     </div>
                     <div className="nav navbar-nav navbar-right">
-                        <button className="btn btn-info">Regisztráció</button>
-                        <button className="btn btn-success" onClick={this.props.changeState}>Belépés</button>
+                        <button className="btn btn-info">Registration</button>
+                        <button className="btn btn-success" onClick={this.props.changeState}>Login</button>
                     </div>
                 </nav>
             );
@@ -36,15 +36,15 @@ class NavBar extends React.Component {
                     <div className="nav navbar-nav navbar-left">
                         <ul className="nav navbar-nav">
                             <li><a href="/">Dashboard</a></li>
-                            <li><a href="/investments">Befektetéseid</a></li>
+                            <li><a href="/investments">Investments</a></li>
                             <li><a href="/shareholds">Shareholdjaid</a></li>
                             <li><a href="/market">Market</a></li>
-                            <li><a href="/collections">Gyűjtések</a></li>
+                            <li><a href="/collections">Money pools</a></li>
                         </ul>
                     </div>
                     <div className="nav navbar-nav navbar-right">
-                        <Link className="btn btn-success" to="/payin">Befizetés</Link>
-                        <button className="btn btn-danger" onClick={this.props.changeState}>Kijelentkezés</button>
+                        <Link className="btn btn-success" to="/payin">Pay in</Link>
+                        <button className="btn btn-danger" onClick={this.props.changeState}>Log out</button>
                     </div>
                 </nav>
             );
