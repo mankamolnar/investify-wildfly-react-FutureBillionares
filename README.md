@@ -64,3 +64,25 @@ b.) /package.json: This is a config file for npm. It contains modules that we wa
 c.) /src/resources/react: Folder of the uncompiled React JavaScript's (for developing).
 
 d.) /static/: Folder of the compiled app (bundle.js).
+
+### 3. Installing Node.js and Npm
+a.) Install Node.js and Npm GLOBALLY: [link text itself]: https://docs.npmjs.com/getting-started/installing-node
+
+b.) Be sure that npm has been added to your ENVIRONMENTAL VARIABLEs and you can use npm command in your terminal / cmd. ("npm -v" should return the version of npm)
+
+c.) cd /to/your/project/root
+
+d.) npm install  
+(This will install LOCALLY node and npm modules into a folder in your project's root called node_modules. Don't worry, I gitignored :] )
+
+e.) Now we can test our npm and webpack configs by hitting "npm run prod-build" 
+><c>
+    "Shiiiiiiit, all I see is redness on the screen!" Comment of the Author
+</c>
+
++1) Now it probably compiled your React JSX to a bundle.js and bundle.map.js as well.   
+(I just realized that the extension for uncompiled react app is .jsx :] )  
+With the map.js the chrome console will be able show the error's place on an uncompiled readable
+code even if it's running the minified unreadable version. Quite nice!
+
+### 4. Integrate Npm into IntelliJ

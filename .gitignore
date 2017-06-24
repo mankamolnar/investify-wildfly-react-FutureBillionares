@@ -2,6 +2,9 @@
 ### Example user template template
 ### Example user template
 
+# React related stuff
+node_modules/*
+
 # IntelliJ project files
 .idea
 *.iml
