@@ -22,22 +22,30 @@ public class Hello extends HttpServlet {
     public void init() throws ServletException
     {
         // Do required initialization
-        message = "Hello World";
+        message = "<html>\n" +
+                "<head>\n" +
+                "\n" +
+                "    <title>Hello React</title>\n" +
+                "    <script type=\"text/javascript\" src=\"/static/react.js\"></script>\n" +
+//                "    <script type=\"text/javascript\" src=\"vendor/showdown.min.js\"></script>\n" +
+                "    <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n" +
+                "\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<div id=\"app\"></div>\n" +
+                "<script type=\"text/javascript\" src=\"/static/bundle.js\"></script>\n" +
+                "</body>\n" +
+                "</html>";
     }
 
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response)
-            throws ServletException, IOException
-    {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ExampleData.createExampleData();
 
-        // Set response content type
         response.setContentType("text/html");
-
-        // Actual logic goes here.
         PrintWriter out = response.getWriter();
-        out.println("<h1>" + message + "</h1>");
+
+        out.println(message);
 
     }
 
