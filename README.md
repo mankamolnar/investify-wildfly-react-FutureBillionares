@@ -87,6 +87,16 @@ code even if it's running the minified unreadable version. Quite nice!
 (I just realized that the extension for uncompiled react app is .jsx, probably I missed it sometimes, sorry for that! :] )
 
 ### 4. Integrate Npm into IntelliJ
-![alt text][logo](https://raw.githubusercontent.com/mankamolnar/investify-wildfly-react-FutureBillionares/feature/mankamolnar_integrate_react/Doc/01_edit_configurations.png "Edit configurations")  
-![alt text][logo](https://github.com/mankamolnar/investify-wildfly-react-FutureBillionares/blob/feature/mankamolnar_integrate_react/Doc/02_add_panel.png?raw=true "Choose npm script")  
-![alt text][logo](https://github.com/mankamolnar/investify-wildfly-react-FutureBillionares/blob/feature/mankamolnar_integrate_react/Doc/03_npm_script_add.png?raw=true "Add npm script")
+a.) First go to edit configurations:  
+![alt text](https://raw.githubusercontent.com/mankamolnar/investify-wildfly-react-FutureBillionares/feature/mankamolnar_integrate_react/Doc/01_edit_configurations.png "Edit configurations")    
+
+b.) Then  go to Deployment > +. It will open a panel with possible scripts to run before Java compile.
+![alt text](https://raw.githubusercontent.com/mankamolnar/investify-wildfly-react-FutureBillionares/feature/mankamolnar_integrate_react/Doc/02_add_panel.png "Choose npm script")
+
+c.) Choose Npm Script ;)  
+
+d.) Setup "npm run prod-build" command and hit OK!  
+![alt text](https://raw.githubusercontent.com/mankamolnar/investify-wildfly-react-FutureBillionares/feature/mankamolnar_integrate_react/Doc/03_npm_script_add.png "Add npm script")
+
+e.) Restart server.  
+(Now its probably compiling your React.jsx then starting WildFly [and compiling Java code as well... so time to roll])
