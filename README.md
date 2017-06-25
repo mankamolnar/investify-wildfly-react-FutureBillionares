@@ -152,7 +152,7 @@ a.) open Index.jsx
     }
 </c>
 
-b.) This is the first time you can see the good side of using ES6! Here we use "class" to define classes we can easily use extending and it also has a constructor method! Do you remember defining class and construct like "var MyClass = function(prop1) { this.pop1 = prop1; };". NEVER AGAIN! :]  
+b.) This is the first time you can see the good side of using ES6! Here we use "class" to define classes we can easily use extending and it also has a constructor method! Do you remember defining class and construct like "var MyClass = function(prop1) { this.pop1 = prop1; };"? NEVER AGAIN! :]  
 
 c.) Every React.Component has render method as well. If any of the component's attributes changes it's state, React will change the content in the Virtual DOM, then compareing the Virtual DOM with the browser's DOM and changes the differences.  
 
@@ -162,6 +162,148 @@ DOM performance: n * n
 VIRTUAL DOM performance: n  
 ( ! ! ! )
 
-### 3. React "elements"
+d.) render() is called automatically by React on state change.
+
+e.) Calling a component's construct in render():
+
+><c>
+    return (
+        <NavBar loggedIn=0 />
+    );
+</c>
+
+In this example we called NavBar component and passed a logged in attribute with the value: 0.
+
+### 3. Importing
+a.) Thanks to ES6 we can import classes (components) from different files!
+
+b.) There are two types of importing. You have to use different syntax if the file has one or more components in it.
+
+c.) Importing one class from Index.jsx.
+
+router.jsx:
+><c>
+    import Index from './Index';
+<c>
+
+Index.jsx:
+><c>
+    export default class Index extends React.Component { ... }
+</c>
+
+d.) Importing more classes from Index.jsx.
+
+router.jsx:
+><x>
+    import class {Index, NavBar} from './Index';
+</x>
+
+Index.jsx:
+><x>
+    export class Index extends React.Component { ... } 
+    
+    export class NavBar extends React.Component { ... }
+</x>
 
 
+### 3. React components
+a.) Let's look at NavBar.jsx:
+><c>
+    export class NavBar extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+    
+        render() {
+            if (this.props.loggedIn == false) {
+                return (
+                    <nav className="navbar navbar-default upNavbar">
+                        <div className="navbar-header">
+                            <Link className="navbar-brand" to="/">Investify</Link>
+                        </div>
+                        <div className="nav navbar-nav navbar-left">
+                            <ul className="nav navbar-nav">
+                                <li><Link to="/">Home page</Link></li>
+                                <li><Link to="/faq">F.A.Q.</Link></li>
+                            </ul>
+                        </div>
+                        <div className="nav navbar-nav navbar-right">
+                            <button className="btn btn-info">Registration</button>
+                            <button className="btn btn-success" onClick={this.props.changeState}>Login</button>
+                        </div>
+                    </nav>
+                );
+    
+            } else {
+                return (
+                    <nav className="navbar navbar-default upNavbar">
+                        <div className="navbar-header">
+                            <Link className="navbar-brand" to="/">Investify</Link>
+                        </div>
+                        <div className="nav navbar-nav navbar-left">
+                            <ul className="nav navbar-nav">
+                                <li><a href="/">Dashboard</a></li>
+                                <li><a href="/investments">Investments</a></li>
+                                <li><a href="/shareholds">Shareholdjaid</a></li>
+                                <li><a href="/market">Market</a></li>
+                                <li><a href="/collections">Money pools</a></li>
+                            </ul>
+                        </div>
+                        <div className="nav navbar-nav navbar-right">
+                            <Link className="btn btn-success" to="/payin">Pay in</Link>
+                            <button className="btn btn-danger" onClick={this.props.changeState}>Log out</button>
+                        </div>
+                    </nav>
+                );
+    
+            }
+    
+        }
+    }
+
+</c>
+
+b.) First take a look at the construct. It has props parameter. This parameter stores all of values that we passed in the "page component" (Index.jsx). Do you remember the example at 2/e?
+><c>
+    return (
+        <NavBar loggedIn=0 />
+    );
+</c>
+
+c.) Now look at the render() method. As React calls this function ALL LOGIC SHOULD BE WRITTEN HERE!
+
+Example:
+><c>
+    render() {
+        //Render navbar in not logged in state
+        if (this.props.loggedIn == false) {
+            ...
+        
+        //Render navbar in logged in state
+        } else {
+            ...
+        }
+    }
+</c>
+
+d.) Have you noticed something at the "HTML" part? We haven't used quotation marks!  
+ We haven't return like: return "\<div>";  
+ We used it like: return \<div>;
+ 
+ So we are NOT RETURNING AN HTML STRING! We return JavaScript classes becouse React uses the Virtual DOM!!!!
+ 
+ This is what actually called JSX!
+ 
+ e.) Becouse of the above we cannot use "class" attribute in JSX becouse it's reserved by defining a class. Therefore we have to use "className" in JSX. 
+ 
+ ><c>
+    return (
+        <div className="btn btn-success">
+    );
+ </c>
+ 
+ f.) Links in JSX:  
+ If you want to make your link be able to work together with React's Router you have to use <Link to="/login"> instead of <a href="/login">.
+ 
+ *** GOOD NEWS ***  
+ If you have read this document until this point YOU ARE ABLE BUILD SINGLE REACT APP !!!
