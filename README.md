@@ -303,7 +303,7 @@ d.) Have you noticed something at the "HTML" part? We haven't used quotation mar
  </c>
  
  f.) Links in JSX:  
- If you want to make your link be able to work together with React's Router you have to use <Link to="/login"> instead of <a href="/login">.
+ If you want to make your link be able to work together with React's Router you have to use \<Link to="/login"> instead of \<a href="/login">.
  
  *** GOOD NEWS ***  
  If you have read this document until this point YOU ARE ABLE BUILD SINGLE REACT APP !!!  
