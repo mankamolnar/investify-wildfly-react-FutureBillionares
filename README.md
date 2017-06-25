@@ -127,7 +127,39 @@ b.) Here ReactDOM starts in #app div!
 
 c.) Router xml structure: path -> url path, component -> {React.component.name}
 
-### 2. Create pages
+
+### 2. Importing
+a.) Thanks to ES6 we can import classes (components) from different files!
+
+b.) There are two types of importing. You have to use different syntax if the file has one or more components in it.
+
+c.) Importing one class from Index.jsx.
+
+router.jsx:
+><c>
+    import Index from './Index';
+<c>
+
+Index.jsx:
+><c>
+    export default class Index extends React.Component { ... }
+</c>
+
+d.) Importing more classes from Index.jsx.
+
+router.jsx:
+><x>
+    import class {Index, NavBar} from './Index';
+</x>
+
+Index.jsx:
+><x>
+    export class Index extends React.Component { ... } 
+    
+    export class NavBar extends React.Component { ... }
+</x>
+
+### 3. Create pages
 
 a.) open Index.jsx
 ><c>
@@ -174,39 +206,7 @@ e.) Calling a component's construct in render():
 
 In this example we called NavBar component and passed a logged in attribute with the value: 0.
 
-### 3. Importing
-a.) Thanks to ES6 we can import classes (components) from different files!
-
-b.) There are two types of importing. You have to use different syntax if the file has one or more components in it.
-
-c.) Importing one class from Index.jsx.
-
-router.jsx:
-><c>
-    import Index from './Index';
-<c>
-
-Index.jsx:
-><c>
-    export default class Index extends React.Component { ... }
-</c>
-
-d.) Importing more classes from Index.jsx.
-
-router.jsx:
-><x>
-    import class {Index, NavBar} from './Index';
-</x>
-
-Index.jsx:
-><x>
-    export class Index extends React.Component { ... } 
-    
-    export class NavBar extends React.Component { ... }
-</x>
-
-
-### 3. React components
+### 4. React components
 a.) Let's look at NavBar.jsx:
 ><c>
     export class NavBar extends React.Component {
@@ -263,7 +263,7 @@ a.) Let's look at NavBar.jsx:
 
 </c>
 
-b.) First take a look at the construct. It has props parameter. This parameter stores all of values that we passed in the "page component" (Index.jsx). Do you remember the example at 2/e?
+b.) First take a look at the construct. It has props parameter. This parameter stores all of values that we passed in the "page component" (Index.jsx). Do you remember the example at 3/e?
 ><c>
     return (
         <NavBar loggedIn=0 />
@@ -306,4 +306,5 @@ d.) Have you noticed something at the "HTML" part? We haven't used quotation mar
  If you want to make your link be able to work together with React's Router you have to use <Link to="/login"> instead of <a href="/login">.
  
  *** GOOD NEWS ***  
- If you have read this document until this point YOU ARE ABLE BUILD SINGLE REACT APP !!!
+ If you have read this document until this point YOU ARE ABLE BUILD SINGLE REACT APP !!!  
+ Maybe we should celebrate shomehow? <0 ~ ~ 
