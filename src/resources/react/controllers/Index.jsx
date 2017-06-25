@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {NavBar} from './NavBar';
+import {NavBar} from '../components/NavBar';
+import {MoneyPool} from '../components/MoneyPool';
 
 // *** PAGES ***
 export class Index extends React.Component {
@@ -17,7 +18,10 @@ export class Index extends React.Component {
 
     render() {
         return (
-            <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState} />
+            <div>
+                <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState} />
+                <MoneyPool loggedIn={this.state.loggedIn} changeState={this.changeState} />
+            </div>
         );
     }
 }

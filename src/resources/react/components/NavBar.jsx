@@ -20,8 +20,8 @@ export class NavBar extends React.Component {
                         </ul>
                     </div>
                     <div className="nav navbar-nav navbar-right">
-                        <button className="btn btn-info">Registration</button>
-                        <button className="btn btn-success" onClick={this.props.changeState}>Login</button>
+                        <button className="btn btn-info">Registration</button>&nbsp;
+                        <button className="btn btn-success" onClick={this.props.changeState}>Login</button>&nbsp;
                     </div>
                 </nav>
             );

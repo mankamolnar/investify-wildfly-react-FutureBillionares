@@ -137,10 +137,10 @@ c.) Importing one class from Index.jsx.
 
 router.jsx:
 ><c>
-    import Index from './Index';
+    import Index from './controllers/Index';
 <c>
 
-Index.jsx:
+controllers/Index.jsx:
 ><c>
     export default class Index extends React.Component { ... }
 </c>
@@ -149,10 +149,10 @@ d.) Importing more classes from Index.jsx.
 
 router.jsx:
 ><x>
-    import class {Index, NavBar} from './Index';
+    import class {Index, NavBar} from './controllers/Index';
 </x>
 
-Index.jsx:
+controllers/Index.jsx:
 ><x>
     export class Index extends React.Component { ... } 
     
@@ -161,7 +161,7 @@ Index.jsx:
 
 ### 3. Create pages
 
-a.) open Index.jsx
+a.) open controllers/Index.jsx
 ><c>
     // *** PAGES ***
     class Index extends React.Component {
@@ -207,7 +207,7 @@ e.) Calling a component's construct in render():
 In this example we called NavBar component and passed a logged in attribute with the value: 0.
 
 ### 4. React components
-a.) Let's look at NavBar.jsx:
+a.) Let's look at components/NavBar.jsx:
 ><c>
     export class NavBar extends React.Component {
         constructor(props) {
@@ -308,3 +308,43 @@ d.) Have you noticed something at the "HTML" part? We haven't used quotation mar
  +++ GOOD NEWS +++  
  If you have read this document until this point YOU ARE ABLE BUILD SINGLE REACT APP !!!  
  Maybe we should celebrate shomehow? <0 ~ ~ 
+ 
+ ### 5. Styling div
+ a.) Example:
+ ><c>
+    const divStyle={width:'50px', height:'30px'};
+    return (<div stlye={divStyle}> ... </div>);
+ </c>
+ 
+ +++ "Olleee, it's AM 4:20 Sunday ;)" Comment of the Author 
+ 
+ ### 6. Space between JSX Objects
+ a.) Example:
+ ><c>
+     return (
+        <div>
+            <div className="btn btn-info">Register</div>{" "}
+            <div className="btn btn-success">Log in</div>
+        </div>
+     );
+  </c>
+  b.) Everything what is between { and } will be executed as JavaScript.
+  
+  c.) This is how you can print js variables: return (\<div>{this.props.loggedIn}\</div>);
+  
+  d.) Expert level (just to understand the concept, no point of it in real use):
+  ><c>
+    return (
+        <div>
+            {
+                (function() { 
+                    return "I can impelement self firing anonymus function in javascript :P!";
+                })();
+            }
+        </div>
+    );
+  </c>
+  
+  ## III. React in team work (MVC Pattern in React)
+  ### 1. MVC Structure
+  a.) Now you have to think a little bit abstract. So far, we used  MVC in Java / Python and they used DATABASE MODELS. In React the components (sub-components, NavBar.jsx) are the Models. The controllers are the parent components (pages, Index.jsx) and the view is the Browser's DOM.

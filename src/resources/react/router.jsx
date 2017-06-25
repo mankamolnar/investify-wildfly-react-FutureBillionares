@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory, Redirect } from 'react-router';
-import {Index} from './Index';
+import {Index} from './controllers/Index';
 
 
 var renderServer = function (comments) {
