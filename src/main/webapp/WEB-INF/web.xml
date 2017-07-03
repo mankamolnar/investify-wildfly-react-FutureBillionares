@@ -7,9 +7,45 @@
         <servlet-name>hello</servlet-name>
         <servlet-class>hu.standapp.investify.servlet.Hello</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>apiauth</servlet-name>
+        <servlet-class>hu.standapp.investify.servlet.ApiAuth</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>apimoneypool</servlet-name>
+        <servlet-class>hu.standapp.investify.servlet.ApiMoneyPool</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>apirandomshareholdsforsale</servlet-name>
+        <servlet-class>hu.standapp.investify.servlet.ApiRandomShareholdsForSale</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>apiregistration</servlet-name>
+        <servlet-class>hu.standapp.investify.servlet.ApiRegistration</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>hello</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>apiauth</servlet-name>
+        <url-pattern>/api/auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>apimoneypool</servlet-name>
+        <url-pattern>/api/moneypool</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>apirandomshareholdsforsale</servlet-name>
+        <url-pattern>/api/random-shareholds-for-sale</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>apiregistration</servlet-name>
+        <url-pattern>/api/registration</url-pattern>
     </servlet-mapping>
 </web-app>

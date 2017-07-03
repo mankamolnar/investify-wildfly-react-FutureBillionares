@@ -44,6 +44,7 @@ public class Hello extends HttpServlet {
         ExampleData.createExampleData();
 
         response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
         out.println(message);
