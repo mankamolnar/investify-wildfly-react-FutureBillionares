@@ -1,4 +1,4 @@
-package test.hu.standapp.investify.model;
+package hu.standapp.investify.model;
 
 import hu.standapp.investify.model.House;
 import hu.standapp.investify.model.Market;

@@ -22,22 +22,31 @@ public class Hello extends HttpServlet {
     public void init() throws ServletException
     {
         // Do required initialization
-        message = "Hello World";
+        message = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n" +
+                "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n" +
+                "<head>\n" +
+                "   <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">" +
+                "    <title>Hello React</title>\n" +
+                "    <script type=\"text/javascript\" src=\"/static/react.js\"></script>\n" +
+//                "    <script type=\"text/javascript\" src=\"vendor/showdown.min.js\"></script>\n" +
+                "    <link href=\"https://bootswatch.com/sandstone/bootstrap.min.css\" rel=\"stylesheet\">\n" +
+                "\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<div id=\"app\"></div>\n" +
+                "<script type=\"text/javascript\" src=\"/static/bundle.js\"></script>\n" +
+                "</body>\n" +
+                "</html>";
     }
 
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response)
-            throws ServletException, IOException
-    {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ExampleData.createExampleData();
 
-        // Set response content type
         response.setContentType("text/html");
-
-        // Actual logic goes here.
         PrintWriter out = response.getWriter();
-        out.println("<h1>" + message + "</h1>");
+
+        out.println(message);
 
     }
 
