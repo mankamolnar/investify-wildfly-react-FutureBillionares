@@ -24,12 +24,12 @@ public class ExampleData {
 
         logger.info("Creating example data");
         User exampleUser = new User("mani", "hali", "hu");
-        House exampleHouse = new House(1000,0000,"City city", "Address address", 1000000);
+        House exampleHouse = new House(1000, 0000, "City city", "Address address", 1000000);
         HousePicture exampleHousePicture = new HousePicture(exampleHouse, "URL", "Description");
-        MoneyPool exampleMoneyPool = new MoneyPool(0,0,1000000);
-        Sharehold exampleSharehold  = new Sharehold(exampleHouse, exampleUser, 10000,10000,40);
-        Market exampleMarket = new Market(exampleSharehold, 1,1, null,null);
-        Investment exampleInvestment = new Investment(exampleUser, exampleMoneyPool, 5, 1000, null,null);
+        MoneyPool exampleMoneyPool = new MoneyPool(0, 0, 1000000);
+        Sharehold exampleSharehold = new Sharehold(exampleHouse, exampleUser, 10000, 10000, 40);
+        ShareholdForSale exampleShareholdForSale = new ShareholdForSale(exampleSharehold, 1, 1, null, null);
+        Investment exampleInvestment = new Investment(exampleUser, exampleMoneyPool, 5, 1000, null, null);
 
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
@@ -39,7 +39,7 @@ public class ExampleData {
         em.persist(exampleHousePicture);
         em.persist(exampleMoneyPool);
         em.persist(exampleSharehold);
-        em.persist(exampleMarket);
+        em.persist(exampleShareholdForSale);
         em.persist(exampleInvestment);
         transaction.commit();
         logger.info("Save complete");

@@ -2,11 +2,11 @@ package hu.standapp.investify.model;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.security.provider.SHA;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.List;
 
 /**
  * Created by flowerpower on 2017. 06. 21..
@@ -34,6 +34,10 @@ public class User {
     private String email;
     private int cash;
     private boolean active;
+    @OneToMany
+    private List<Investment> investment;
+    @OneToMany
+    private List<Sharehold> shareholds;
 
     public User() {}
 

@@ -16,19 +16,18 @@ public class Investment {
     /**
      * @param id of the Investment.
      * @param user , id of the User.
-     * @param mmoneyPool , id of the MoneyPool.
+     * @param moneyPool , id of the MoneyPool.
      * @param sharehold the percent what the user bought from the house.
      * @param price the price what the user invest so far.
      * @param startDate the day of the pay in.
      * @param endDate a half year from the startDate.
      * @param closed represents that the user got the house or not.
-     *
      */
 
     private final static Logger logger = LoggerFactory.getLogger(Investment.class);
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
     private User user;
@@ -36,25 +35,22 @@ public class Investment {
     private MoneyPool moneyPool;
     @Min(0)
     @Max(100)
-    @Column(name = "Sharehold")
-    private int sharehold;
+    private int shareholdAmount;
     @Min(0)
     private int price;
-    @Column(name = "Start_Date")
     private Date startDate;
-    @Column(name = "End_Date")
     private Date endDate;
-    @Column(name = "Closed")
     private boolean closed;
 
-    public Investment() {}
+    public Investment() {
+    }
 
-    public Investment(User user, MoneyPool moneypool, int sharehold, int price, Date start, Date end) {
-        logger.info("Creating Investment Object | MoneyPool: "+moneypool+", Sharehold: "+sharehold+
-                ", Price: "+price+", Start Date: "+start+", End Date: "+end);
+    public Investment(User user, MoneyPool moneypool, int shareholdAmount, int price, Date start, Date end) {
+        logger.info("Creating Investment Object | MoneyPool: " + moneypool + ", Sharehold: " + shareholdAmount +
+                ", Price: " + price + ", Start Date: " + start + ", End Date: " + end);
         this.user = user;
         this.moneyPool = moneypool;
-        this.sharehold = sharehold;
+        this.shareholdAmount = shareholdAmount;
         this.price = price;
         this.startDate = start;
         this.endDate = end;
@@ -62,12 +58,11 @@ public class Investment {
     }
 
     /**
-     *
      * Basic getters and setters for the Investment.
      */
 
     public int getPriceAll() {
-        return price * sharehold;
+        return price * shareholdAmount;
     }
 
     public User getUser() {
@@ -86,12 +81,12 @@ public class Investment {
         this.moneyPool = moneyPool;
     }
 
-    public int getSharehold() {
-        return sharehold;
+    public int getShareholdAmount() {
+        return shareholdAmount;
     }
 
-    public void setSharehold(int sharehold) {
-        this.sharehold = sharehold;
+    public void setShareholdAmount(int sharehold) {
+        this.shareholdAmount = sharehold;
     }
 
     public int getPrice() {

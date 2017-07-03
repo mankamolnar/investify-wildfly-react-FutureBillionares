@@ -11,12 +11,12 @@ import java.util.Date;
  */
 
 @Entity
-public class Market {
+public class ShareholdForSale {
 
     /**
-     * @param id of the Market
+     * @param id of the ShareholdForSale
      * @param shareholdId , id of hte sharehold.
-     * @param shareholdForSale the part of the sharehold that the user want to sale.
+     * @param amount amount of the sharehold to sale.
      * @param price of the sharehold that the user want to sale.
      * @param startDate the date when the user made the sharhold for sale.
      * @param endDate the date when the sharehold was sold.
@@ -24,26 +24,27 @@ public class Market {
      */
 
 
-    private final static Logger logger = LoggerFactory.getLogger(Market.class);
+    private final static Logger logger = LoggerFactory.getLogger(ShareholdForSale.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
     private Sharehold sharehold;
-    private int shareholdForSale;
+    private int amount;
     private int price;
     private Date startDate;
     private Date endDate;
     private boolean active;
 
-    public Market (){}
+    public ShareholdForSale() {
+    }
 
-    public Market(Sharehold sharehold, int shareholdForSale, int price, Date startDate, Date endDate){
-        logger.info("Creating Market Object | Sharehold: "+sharehold+", Sharehold for sale: "+shareholdForSale+
-                ", Price: "+price+", Start date: "+startDate+", End date: "+endDate);
+    public ShareholdForSale(Sharehold sharehold, int amount, int price, Date startDate, Date endDate) {
+        logger.info("Creating ShareholdForSale Object | Sharehold: " + sharehold + ", Sharehold for sale: " + amount +
+                ", Price: " + price + ", Start date: " + startDate + ", End date: " + endDate);
         this.sharehold = sharehold;
-        this.shareholdForSale = shareholdForSale;
+        this.amount = amount;
         this.price = price;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -51,15 +52,15 @@ public class Market {
     }
 
     /**
-     *Basic getters and setters for the Market
+     * Basic getters and setters for the ShareholdForSale
      */
 
     public int getShareholdForSale() {
-        return shareholdForSale;
+        return amount;
     }
 
-    public void setShareholdForSale(int shareholdForSale) {
-        this.shareholdForSale = shareholdForSale;
+    public void setShareholdForSale(int amount) {
+        this.amount = amount;
     }
 
     public int getPrice() {

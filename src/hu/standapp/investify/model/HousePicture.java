@@ -23,26 +23,24 @@ public class HousePicture {
     private final static Logger logger = LoggerFactory.getLogger(HousePicture.class);
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @OneToOne
     private House house;
-    @Column(name = "URL")
     private String url;
-    @Column(name = "Description")
     private String description;
 
-    public HousePicture() {}
+    public HousePicture() {
+    }
 
     public HousePicture(House house, String url, String description) {
-        logger.info("Creating HousePicture Object | House: "+house+", URL: "+url+", Description: "+description);
+        logger.info("Creating HousePicture Object | House: " + house + ", URL: " + url + ", Description: " + description);
         this.house = house;
         this.url = url;
         this.description = description;
     }
 
     /**
-     *
      * Basic getters and setter for the HousePicture.
      */
 

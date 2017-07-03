@@ -22,7 +22,7 @@ class InvestmentTest {
 
     @Test
     void getSharehold() {
-        assertEquals(testInvestment.getSharehold(), 3);
+        assertEquals(testInvestment.getShareholdAmount(), 3);
     }
 
     @Test
