@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory, Redirect } from 'react-router';
 import {Index} from './controllers/Index';
+import {Faq} from './controllers/Faq';
 
 
 var renderServer = function (comments) {
@@ -17,6 +18,6 @@ ReactDOM.render((
         <Route path="/" component={Index} />
         <Route path="/login" component={Index} />
         <Route path="/logout" component={Index} />
-        <Route path="/faq" component={Index} />
+        <Route path="/faq" component={Faq} />
     </Router>
 ), document.getElementById('app'));
