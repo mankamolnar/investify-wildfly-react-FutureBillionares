@@ -4,10 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sun.security.provider.SHA;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by flowerpower on 2017. 06. 22..
@@ -19,29 +17,30 @@ public class MoneyPool {
      * @param payedIn amount of the money paid in by users so far.
      * @param goal the amount what we want to gather.
      * @param shareholdPrice the unit price of the sharehold.
-     *
      */
 
     private final static Logger logger = LoggerFactory.getLogger(MoneyPool.class);
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int payedIn;
     private int goal;
     private int shareholdPrice;
+    @OneToMany(mappedBy = "moneyPool")
+    private List<Investment> investments;
 
-    public MoneyPool() {}
+    public MoneyPool() {
+    }
 
     public MoneyPool(int payedIn, int goal, int shareholdPrice) {
-        logger.info("Creating MoneyPool Object | Payed In: "+payedIn+", Goal: "+goal+", Sharehold Price: "+shareholdPrice);
+        logger.info("Creating MoneyPool Object | Payed In: " + payedIn + ", Goal: " + goal + ", Sharehold Price: " + shareholdPrice);
         this.payedIn = payedIn;
         this.goal = goal;
         this.shareholdPrice = shareholdPrice;
     }
 
     /**
-     *
      * Basic getters and setter for the MoneyPool.
      */
 

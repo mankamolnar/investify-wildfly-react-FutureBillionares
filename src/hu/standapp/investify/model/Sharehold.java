@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import sun.security.provider.SHA;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by gombaspeteer on 6/22/17.
@@ -31,15 +32,18 @@ public class Sharehold {
     private House house;
     @ManyToOne
     private User user;
+    @OneToMany(mappedBy = "sharehold")
+    private List<ShareholdForSale> shareholdsForSale;
     private int boughtPrice;
     private int soldPrice;
     private int shareHoldTotal;
 
-    public Sharehold(){}
+    public Sharehold() {
+    }
 
-    public Sharehold(House house, User user, int boughtPrice, int soldPrice, int shareHoldTotal){
-        logger.info("Creating Sharehold Object | House: "+house+" User + "+user+", Bought price: "+boughtPrice+
-        ", Sold Price: "+soldPrice+", Sharehold total: "+shareHoldTotal);
+    public Sharehold(House house, User user, int boughtPrice, int soldPrice, int shareHoldTotal) {
+        logger.info("Creating Sharehold Object | House: " + house + " User + " + user + ", Bought price: " + boughtPrice +
+                ", Sold Price: " + soldPrice + ", Sharehold total: " + shareHoldTotal);
         this.house = house;
         this.user = user;
         this.boughtPrice = boughtPrice;
@@ -48,8 +52,7 @@ public class Sharehold {
     }
 
     /**
-     *Basic getters and setters for the Sharehold.
-     *
+     * Basic getters and setters for the Sharehold.
      */
 
     public int getBoughtPrice() {

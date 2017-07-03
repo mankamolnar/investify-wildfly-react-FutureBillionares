@@ -10,7 +10,7 @@
         <class>hu.standapp.investify.model.House</class>
         <class>hu.standapp.investify.model.HousePicture</class>
         <class>hu.standapp.investify.model.Sharehold</class>
-        <class>hu.standapp.investify.model.Market</class>
+        <class>hu.standapp.investify.model.ShareholdForSale</class>
         <class>hu.standapp.investify.model.Investment</class>
         <class>hu.standapp.investify.model.MoneyPool</class>
         <properties>
