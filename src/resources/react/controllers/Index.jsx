@@ -5,7 +5,7 @@ import {MoneyPool} from '../components/MoneyPool';
 import AuthService from '../services/AuthService';
 
 // *** PAGES ***
-export class Index extends React.Component {
+export default class Index extends React.Component {
     constructor() {
         super();
         this.state = {loggedIn:false};

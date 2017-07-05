@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory, Redirect } from 'react-router';
-import {Index} from './controllers/Index';
-import {Faq} from './controllers/Faq';
-import {Registration} from "./controllers/Registration";
+import Index from './controllers/Index';
+import Faq from './controllers/Faq';
+import Registration from "./controllers/Registration";
 
 
 var renderServer = function (comments) {
