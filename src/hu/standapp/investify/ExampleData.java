@@ -14,19 +14,35 @@ import javax.persistence.Persistence;
  */
 public class ExampleData {
 
+    private EntityManagerFactory emf;
+    private EntityManager em;
+    private static ExampleData instance;
+
     private static final Logger logger = LoggerFactory.getLogger(ExampleData.class);
 
-    public static void createExampleData() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("bfsExampleUnit");
+    private ExampleData() {
+        emf = Persistence.createEntityManagerFactory("bfsExampleUnit");
+        em = emf.createEntityManager();
+    }
 
-        EntityManager em = emf.createEntityManager();
+    public static ExampleData getInstance() {
+        if (instance == null) {
+            instance = new ExampleData();
+            instance.createExampleData();
+            return instance;
+        }
+        return instance;
+    }
+
+
+    private void createExampleData() {
         em.clear();
 
         logger.info("Creating example data");
         User exampleUser = new User("mani", "hali", "hu");
         House exampleHouse = new House(1000, 0000, "City city", "Address address", 1000000);
         HousePicture exampleHousePicture = new HousePicture(exampleHouse, "URL", "Description");
-        MoneyPool exampleMoneyPool = new MoneyPool(0, 0, 1000000);
+        MoneyPool exampleMoneyPool = new MoneyPool(4500000, 10000000, 100000, 20);
         Sharehold exampleSharehold = new Sharehold(exampleHouse, exampleUser, 10000, 10000, 40);
         ShareholdForSale exampleShareholdForSale = new ShareholdForSale(exampleSharehold, 1, 1, null, null);
         Investment exampleInvestment = new Investment(exampleUser, exampleMoneyPool, 5, 1000, null, null);
@@ -43,5 +59,9 @@ public class ExampleData {
         em.persist(exampleInvestment);
         transaction.commit();
         logger.info("Save complete");
+    }
+
+    public EntityManager getEntityManager() {
+        return em;
     }
 }

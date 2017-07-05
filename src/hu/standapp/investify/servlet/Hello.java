@@ -42,7 +42,7 @@ public class Hello extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ExampleData.createExampleData();
+        ExampleData exampleData = ExampleData.getInstance();
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");

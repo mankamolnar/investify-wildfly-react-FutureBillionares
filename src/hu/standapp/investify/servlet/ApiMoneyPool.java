@@ -1,9 +1,16 @@
 package hu.standapp.investify.servlet;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import hu.standapp.investify.ExampleData;
+import hu.standapp.investify.model.MoneyPool;
+import org.osgi.service.jpa.EntityManagerFactoryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,13 +33,20 @@ public class ApiMoneyPool extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ExampleData.createExampleData();
+        ExampleData exampleData = ExampleData.getInstance();
+        EntityManager em = exampleData.getEntityManager();
 
-        response.setContentType("text/html");
+        long id = 1;
+        MoneyPool moneyPool = em.find(MoneyPool.class, id);
+        ObjectMapper mapper = new ObjectMapper();
+        String objAsJSON = mapper.writeValueAsString(moneyPool);
+
+
+        response.setContentType("application/JSON");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        out.println(message);
+        out.println(objAsJSON);
 
     }
 

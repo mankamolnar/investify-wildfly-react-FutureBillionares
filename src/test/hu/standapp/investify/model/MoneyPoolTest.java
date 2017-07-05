@@ -11,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class MoneyPoolTest {
 
-    MoneyPool testMoneypool = new MoneyPool(400, 1000, 10);
+    MoneyPool testMoneypool = new MoneyPool(400, 1000, 10, 20);
 
     @BeforeEach
     void setUp() {
         testMoneypool.setGoal(1000);
         testMoneypool.setPayedIn(400);
-        testMoneypool.setShareholdPrice(10);
+        testMoneypool.setUnitPrice(10);
     }
 
     @Test
@@ -44,13 +44,13 @@ class MoneyPoolTest {
 
     @Test
     void getShareholdPrice() {
-        assertEquals(10, testMoneypool.getShareholdPrice());
+        assertEquals(10, testMoneypool.getUnitPrice());
     }
 
     @Test
     void setShareholdPrice() {
-        testMoneypool.setShareholdPrice(5);
-        assertEquals(5, testMoneypool.getShareholdPrice());
+        testMoneypool.setUnitPrice(5);
+        assertEquals(5, testMoneypool.getUnitPrice());
     }
 
 }

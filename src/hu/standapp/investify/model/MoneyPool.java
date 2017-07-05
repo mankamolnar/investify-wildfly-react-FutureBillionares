@@ -2,7 +2,6 @@ package hu.standapp.investify.model;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.security.provider.SHA;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,18 +25,20 @@ public class MoneyPool {
     private long id;
     private int payedIn;
     private int goal;
-    private int shareholdPrice;
+    private int unitPrice;
+    private int investors;
     @OneToMany(mappedBy = "moneyPool")
     private List<Investment> investments;
 
     public MoneyPool() {
     }
 
-    public MoneyPool(int payedIn, int goal, int shareholdPrice) {
-        logger.info("Creating MoneyPool Object | Payed In: " + payedIn + ", Goal: " + goal + ", Sharehold Price: " + shareholdPrice);
+    public MoneyPool(int payedIn, int goal, int unitPrice, int investors) {
+        logger.info("Creating MoneyPool Object | Payed In: " + payedIn + ", Goal: " + goal + ", Sharehold Price: " + unitPrice);
         this.payedIn = payedIn;
         this.goal = goal;
-        this.shareholdPrice = shareholdPrice;
+        this.unitPrice = unitPrice;
+        this.investors = investors;
     }
 
     /**
@@ -60,11 +61,19 @@ public class MoneyPool {
         this.goal = goal;
     }
 
-    public int getShareholdPrice() {
-        return shareholdPrice;
+    public int getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setShareholdPrice(int shareholdPrice) {
-        this.shareholdPrice = shareholdPrice;
+    public void setUnitPrice(int shareholdPrice) {
+        this.unitPrice = shareholdPrice;
+    }
+
+    public int getInvestors() {
+        return investors;
+    }
+
+    public void setInvestors(int investors) {
+        this.investors = investors;
     }
 }

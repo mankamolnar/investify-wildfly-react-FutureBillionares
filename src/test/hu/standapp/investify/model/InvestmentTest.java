@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class InvestmentTest {
 
     User testUser = new User("mano", "halo", "hali");
-    MoneyPool moneyPool = new MoneyPool(100, 1000, 50);
+    MoneyPool moneyPool = new MoneyPool(100, 1000, 50, 20);
     Investment testInvestment = new Investment(testUser, moneyPool, 3, 100, new Date(10000), new Date(10000));
 
     @Test

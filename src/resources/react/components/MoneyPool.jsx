@@ -5,31 +5,32 @@ import MPoolService from '../services/MPoolService';
 export class MoneyPool extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {id:0, payedin:0, goal:0, investors:0, unitPrice:0};
+        this.state = {id:0, payedIn:0, goal:0, investors:0, unitPrice:0};
         this.state.goal = 0;
         this.mPoolService = new MPoolService();
         this.mPoolService.getPool().then(r => this.setState(r));
     }
 
     render() {
+        console.log(this.state);
         while (this.state.goal == 0) {
             return (
                 <div className="loader"> </div>
             )
         }
-        const progressBarStyle = {width:(this.state.payedin / this.state.goal * 100)+"%"};
+        const progressBarStyle = {width:(this.state.payedIn / this.state.goal * 100)+"%"};
         if (this.props.loggedIn == false) {
             return (
                 <div className="jumbotron text-center">
                     <h1>Current money pool</h1>
                     <div className="progress mprogress">
-                        <div className="progress-bar progress-bar-striped active" aria-valuenow={this.state.payedin / this.state.goal * 100} aria-valuemin="0" aria-valuemax="100" style={progressBarStyle}>
+                        <div className="progress-bar progress-bar-striped active" aria-valuenow={this.state.payedIn / this.state.goal * 100} aria-valuemin="0" aria-valuemax="100" style={progressBarStyle}>
                         </div>
                     </div>
 
                     <p>
                         <br />
-                            <b>{this.state.payedin}</b><b> HUF</b> /
+                            <b>{this.state.payedIn}</b><b> HUF</b> /
                             <span>{this.state.goal}</span> HUF<br /><br />
 
                             <b>Minimum investable:</b> <span>{this.state.unitPrice}</span> HUF<br />
@@ -56,16 +57,16 @@ export class MoneyPool extends React.Component {
                 <div className="jumbotron text-center">
                     <h1>Current money pool</h1>
                     <div className="progress mprogress">
-                        <div className="progress-bar progress-bar-striped active" aria-valuenow={this.state.payedin / this.state.goal * 100} aria-valuemin="0" aria-valuemax="100" style={progressBarStyle}>
+                        <div className="progress-bar progress-bar-striped active" aria-valuenow={this.state.payedIn / this.state.goal * 100} aria-valuemin="0" aria-valuemax="100" style={progressBarStyle}>
                         </div>
                     </div>
 
                     <p>
                         <br />
-                        <b>{this.state.payedin}</b><b> HUF</b> /
+                        <b>{this.state.payedIn}</b><b> HUF</b> /
                         <span>{this.state.goal}</span> HUF<br /><br />
 
-                        <b>Minimum investable: {this.state.payedin / this.state.goal * 100}</b> <span>{this.state.unitPrice}</span> HUF<br />
+                        <b>Minimum investable: {this.state.payedIn / this.state.goal * 100}</b> <span>{this.state.unitPrice}</span> HUF<br />
                         <b>Guaranteed payback time:</b> 12-15 years<br />
                         <b>Predicted monthly turnover:</b> ~500 HUF<br />
                         <b>Invested already:</b> <span>{this.state.investors}</span><br />
