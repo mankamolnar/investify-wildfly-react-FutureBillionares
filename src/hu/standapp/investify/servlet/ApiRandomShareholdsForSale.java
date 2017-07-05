@@ -21,7 +21,7 @@ public class ApiRandomShareholdsForSale extends HttpServlet {
     public void init() throws ServletException
     {
         // Do required initialization
-        message = "[{id: 1, address:'2016 Leányfalu, Fecske utca 27', area:17, returnTime:14, sharehold:1, price:120000, income:500, tenantReliability:100, picUrl:'http://ingatlancdn.com/photos/be/f2/22979252_110161242_l.jpg', picDescription:'haha'}, {id: 1, address:'2016 Leányfalu, Fecske utca 27', area:17, returnTime:14, sharehold:1, price:120000, income:500, tenantReliability:100, picUrl:'http://ingatlancdn.com/photos/be/f2/22979252_110161242_l.jpg', picDescription:'haha'}]";
+        message = "[{id: 1, address:'2016 Leányfalu, Fecske utca 27', area:17, returnTime:14, shareholdAmount:1, unitPrice:120000, income:500, tenantReliability:100, picUrl:'http://ingatlancdn.com/photos/be/f2/22979252_110161242_l.jpg', picDescription:'haha'}, {id: 1, address:'2016 Leányfalu, Fecske utca 27', area:17, returnTime:14, shareholdAmount:1, unitPrice:120000, income:500, tenantReliability:100, picUrl:'http://ingatlancdn.com/photos/be/f2/22979252_110161242_l.jpg', picDescription:'haha'}]";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
