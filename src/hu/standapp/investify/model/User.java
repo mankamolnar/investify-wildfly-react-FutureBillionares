@@ -2,10 +2,10 @@ package hu.standapp.investify.model;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.security.provider.SHA;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
@@ -45,15 +45,44 @@ public class User {
         logger.info("Creating User Object | Name: "+name+", password: *****, Email: "+email);
 
         this.name = name;
-        this.password = password;
+        this.password = passToHash(password);
         this.email = email;
         this.cash = 0;
         this.active = true;
     }
 
-    /**
-     * Basic getters and setters for the User.
-     */
+
+    public String passToHash(String password) {
+
+        String generatedPassword = null;
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(password.getBytes());
+            byte[] bytes = md.digest();
+
+
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++) {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            generatedPassword = sb.toString();
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+
+        return generatedPassword;
+
+    }
+    public boolean  checkPassword(String enteredPassword){
+        boolean isEquals = false;
+        String generatedHash = passToHash(enteredPassword);
+        if (generatedHash.equals(password)){
+            isEquals = true;
+        }
+        return isEquals;
+    }
 
     public String getEmail() {
         return email;
