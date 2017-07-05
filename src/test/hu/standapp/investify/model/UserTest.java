@@ -13,7 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class UserTest {
 
+
     User test = new User("mani", "hali", "hu");
+
+
 
     @BeforeEach
     void setUp() {
