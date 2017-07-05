@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import NavBar from '../components/NavBar';
 import FaqPage from "../components/FaqPage";
 // *** PAGES ***
-export class Faq extends React.Component {
+export default class Faq extends React.Component {
     constructor() {
         super();
         this.state = {loggedIn:false};

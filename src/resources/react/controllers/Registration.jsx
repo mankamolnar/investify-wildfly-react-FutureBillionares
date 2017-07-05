@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {NavBar} from '../components/NavBar';
+import NavBar from '../components/NavBar';
 import RegistrationForm from '../components/RegistrationForm';
 // *** PAGES ***
 export default class Registration extends React.Component {

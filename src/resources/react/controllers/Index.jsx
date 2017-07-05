@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {NavBar} from '../components/NavBar';
-import {MoneyPool} from '../components/MoneyPool';
+import NavBar from '../components/NavBar';
+import MoneyPool from '../components/MoneyPool';
 import AuthService from '../services/AuthService';
 
 // *** PAGES ***

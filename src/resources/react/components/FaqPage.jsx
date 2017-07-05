@@ -17,7 +17,6 @@ export default class FaqPage extends React.Component {
     render() {
         return (
             <div>
-                <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState} />
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-1">

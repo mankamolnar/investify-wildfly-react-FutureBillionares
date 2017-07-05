@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router'
 
-export class MoneyPool extends React.Component {
+export default class MoneyPool extends React.Component {
     constructor(props) {
         super(props);
     }
