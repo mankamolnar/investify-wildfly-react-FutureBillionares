@@ -21,7 +21,7 @@ public class ApiAuth extends HttpServlet {
     public void init() throws ServletException
     {
         // Do required initialization
-        message = "{cash: 0, investments: 0, shareholds: 0, income: 0, tenantReliability: 100}";
+        message = "{loggedIn:true, user:{id:1, username:'manka', cash: 0, investments: 0, shareholds: 0, income: 0, tenantReliability: 100}}";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
