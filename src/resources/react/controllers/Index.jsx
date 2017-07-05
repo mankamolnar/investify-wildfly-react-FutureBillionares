@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import {NavBar} from '../components/NavBar';
 import {MoneyPool} from '../components/MoneyPool';
 import AuthService from '../services/AuthService';
+import MPoolServie from '../services/MPoolService';
 
 // *** PAGES ***
 export class Index extends React.Component {

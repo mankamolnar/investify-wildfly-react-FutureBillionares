@@ -1,8 +1,8 @@
-export default class AuthService {
-    authenticate(username, password) {
+export default class MPoolService {
+    getPool() {
         let result = new Promise((resolve, reject) => {
             let request = new XMLHttpRequest();
-            request.open("GET", "/api/auth");
+            request.open("GET", "/api/moneypool");
             request.onreadystatechange = () => {
                 let raw = request.responseText;
                 if (request.readyState==4 && request.status==200) {

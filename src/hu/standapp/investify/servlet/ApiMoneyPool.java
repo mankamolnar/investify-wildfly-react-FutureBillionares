@@ -21,7 +21,7 @@ public class ApiMoneyPool extends HttpServlet {
     public void init() throws ServletException
     {
         // Do required initialization
-        message = "{\"id\":1, \"goal\":1, \"payedin\":2, \"investors\":3, \"unitPrice\": 100000}";
+        message = "{\"id\":1, \"goal\":10000000, \"payedin\":4500000, \"investors\":20, \"unitPrice\": 100000}";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
