@@ -21,7 +21,7 @@ export class NavBar extends React.Component {
                     </div>
                     <div className="nav navbar-nav navbar-right">
                         <button className="btn btn-info">Registration</button>&nbsp;
-                        <button className="btn btn-success" onClick={this.props.changeState}>Login</button>&nbsp;
+                        <button className="btn btn-success" onClick={this.props.login}>Login</button>&nbsp;
                     </div>
                 </nav>
             );
@@ -43,7 +43,7 @@ export class NavBar extends React.Component {
                     </div>
                     <div className="nav navbar-nav navbar-right">
                         <Link className="btn btn-success" to="/payin">Pay in</Link>
-                        <button className="btn btn-danger" onClick={this.props.changeState}>Log out</button>
+                        <button className="btn btn-danger" onClick={this.props.login}>Log out</button>
                     </div>
                 </nav>
             );

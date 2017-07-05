@@ -2,25 +2,31 @@ import React from 'react';
 import {Link} from 'react-router';
 import {NavBar} from '../components/NavBar';
 import {MoneyPool} from '../components/MoneyPool';
+import AuthService from '../services/AuthService';
 
 // *** PAGES ***
 export class Index extends React.Component {
     constructor() {
         super();
         this.state = {loggedIn:false};
-        this.changeState = this.changeState.bind(this)
+        this.login = this.login.bind(this)
     }
 
-    changeState() {
+    login() {
+        console.log("itt");
+        this.authService = new AuthService();
+        this.authService.authenticate("hihi", "haha").then(r => this.setState(r));
+        console.log(this.state)
         console.log(this.state.loggedIn);
-        this.setState({loggedIn:!this.state.loggedIn});
+        // this.setState({loggedIn:!this.state.loggedIn});
+
     }
 
     render() {
         return (
             <div>
-                <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState} />
-                <MoneyPool loggedIn={this.state.loggedIn} changeState={this.changeState} />
+                <NavBar loggedIn={this.state.loggedIn} login={this.login} />
+                <MoneyPool loggedIn={this.state.loggedIn} login={this.login} />
             </div>
         );
     }
