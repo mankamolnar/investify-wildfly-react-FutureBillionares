@@ -2,20 +2,13 @@ import React from 'react';
 import {Link} from 'react-router';
 // *** PAGES ***
 export default class RegistrationForm extends React.Component {
-    constructor() {
-        super();
-        this.state = {loggedIn: false};
-        this.changeState = this.changeState.bind(this)
-    }
-
-    changeState() {
-        console.log(this.state.loggedIn);
-        this.setState({loggedIn: !this.state.loggedIn});
+    constructor(props) {
+        super(props);
     }
 
     render() {
         return (
-            <div>
+
                 <div className="jumbotron text-center">
                     <h1>Registration</h1>
                     <form action="/registration" method="post">
@@ -52,7 +45,6 @@ export default class RegistrationForm extends React.Component {
                         </div>
                     </form>
                 </div>
-            </div>
         );
     }
 }
