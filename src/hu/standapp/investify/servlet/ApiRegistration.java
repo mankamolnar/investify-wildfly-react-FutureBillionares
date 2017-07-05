@@ -21,7 +21,7 @@ public class ApiRegistration extends HttpServlet {
     public void init() throws ServletException
     {
         // Do required initialization
-        message = "{registered:false, message:'Username is already taken'}";
+        message = "{registered:false, usernameOK:false, emailOK:false}";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
