@@ -50,5 +50,10 @@ class UserTest {
         test.setActive(false);
         assertFalse(test.isActive());
     }
+    @Test
+    void passWordCheck(){
+        boolean x = test.checkPassword("hali");
+        assertTrue(x);
+    }
 
 }

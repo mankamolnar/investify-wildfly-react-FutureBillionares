@@ -51,9 +51,7 @@ public class User {
         this.active = true;
     }
 
-    /**
-     * Basic getters and setters for the User.
-     */
+
     public String passToHash(String password) {
 
         String generatedPassword = null;
@@ -77,7 +75,14 @@ public class User {
         return generatedPassword;
 
     }
-    public 
+    public boolean  checkPassword(String enteredPassword){
+        boolean isEquals = false;
+        String generatedHash = passToHash(enteredPassword);
+        if (generatedHash.equals(password)){
+            isEquals = true;
+        }
+        return isEquals;
+    }
 
     public String getEmail() {
         return email;
