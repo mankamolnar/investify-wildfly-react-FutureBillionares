@@ -19,9 +19,9 @@ export class NavBar extends React.Component {
                             <li><Link to="/faq">F.A.Q.</Link></li>
                         </ul>
                     </div>
-                    <div className="nav navbar-nav navbar-right">
+                    <div className="mnavbar-right">
                         <button className="btn btn-info">Registration</button>&nbsp;
-                        <button className="btn btn-success" onClick={this.props.login}>Login</button>&nbsp;
+                        <Link className="btn btn-success" to="/login">Login</Link>&nbsp;
                     </div>
                 </nav>
             );
