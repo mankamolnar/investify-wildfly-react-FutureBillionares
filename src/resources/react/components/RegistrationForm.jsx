@@ -11,12 +11,11 @@ export default class RegistrationForm extends React.Component {
 
             <div className="jumbotron text-center">
                 <h1>Registration</h1>
-                <form action="/registration" method="post" onSubmit={this.props.handleSubmit}>
                     <div className="td-2 title">
                         Username
                     </div>
                     <div className="td-2">
-                        <input type="text" id="username" name="username" value={this.props.value} onChange={this.props.handleChange} className="form-control half"/>
+                        <input type="text" id="username" name="username" className="form-control half"/>
                     </div>
 
                     <div className="td-2 title newline">
@@ -41,9 +40,8 @@ export default class RegistrationForm extends React.Component {
                     </div>
 
                     <div className="td-1">
-                        <button type="submit" value="Submit" className="btn btn-success">Sign Up</button>
+                        <button type="submit" className="btn btn-success" onClick={this.props.registrate}>Sign Up</button>
                     </div>
-                </form>
             </div>
         );
     }
