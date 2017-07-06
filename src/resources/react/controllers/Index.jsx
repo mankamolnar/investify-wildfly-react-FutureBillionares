@@ -4,7 +4,6 @@ import NavBar from '../components/NavBar';
 import MoneyPool from '../components/MoneyPool';
 
 // *** PAGES ***
-
 export default class Index extends React.Component {
     constructor(props) {
         super(props);

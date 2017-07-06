@@ -16,7 +16,7 @@ import Login from './controllers/Login'
 export default class MainController extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {loggedIn:false};
+        this.state = {loggedIn:false, user:false};
         this.mainControllerSetState = this.mainControllerSetState.bind(this);
     }
 
