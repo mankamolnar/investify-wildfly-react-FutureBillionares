@@ -2,42 +2,43 @@ import React from 'react';
 import {Link} from 'react-router';
 import NavBar from '../components/NavBar';
 import RegistrationForm from '../components/RegistrationForm';
+import RegistrationService from '../services/RegistrationService';
+
 // *** PAGES ***
 export default class Registration extends React.Component {
-    constructor() {
-        super();
-        this.state = {loggedIn: false, value: ''};
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.changeState = this.changeState.bind(this);
+    constructor(props) {
+        super(props);
+        this.state = {
+            loggedIn: this.props.loggedIn,
+            registered: false,
+            usernameOK: true,
+            emailOK: true
+        };
+        this.registrate = this.registrate.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
+    registrate(username, password, password2, email) {
 
-    // handleSubmit(event) {
-    //     alert('A name was submitted: ' + this.state.value);
-    //     event.preventDefault();
-    // }
-
-    handleSubmit(event) {
-        console.log("ITT");
-        let username = document.getElementById("username");
-        console.log(username);
-    }
-
-    changeState() {
-        console.log(this.state.loggedIn);
-        this.setState({loggedIn: !this.state.loggedIn});
+        this.setState({registered: true});
+        this.registrationService = new RegistrationService();
+        this.registrationService.registrate(username, password, password2, email).then(r => this.setState(r));
+        console.log(username.value, password.value, password2.value, email.value);
     }
 
     render() {
+        var content;
+        // console.log(this.state.registered);
+        if (!this.state.registered) {
+            content = <RegistrationForm regState={this.state} registrate={this.registrate}/>
+        } else {
+            content = (<div className="alert alert-success">
+                <strong>Your registration was successfull!</strong></div>)
+        }
+
         return (
             <div>
-                <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState}/>
-                <RegistrationForm value={this.state.value} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+                <NavBar loggedIn={this.state.loggedIn} />
+                {content}
             </div>
         );
     }
