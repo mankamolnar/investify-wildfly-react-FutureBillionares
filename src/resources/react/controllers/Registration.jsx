@@ -6,8 +6,20 @@ import RegistrationForm from '../components/RegistrationForm';
 export default class Registration extends React.Component {
     constructor() {
         super();
-        this.state = {loggedIn: false};
-        this.changeState = this.changeState.bind(this)
+        this.state = {loggedIn: false, value: ''};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeState = this.changeState.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
     }
 
     changeState() {
@@ -16,10 +28,11 @@ export default class Registration extends React.Component {
     }
 
     render() {
+        console.log("ITT");
         return (
             <div>
                 <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState}/>
-                <RegistrationForm loggedIn={this.state.loggedIn} changeState={this.changeState}/>
+                <RegistrationForm value={this.state.value} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
             </div>
         );
     }

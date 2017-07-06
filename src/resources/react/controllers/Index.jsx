@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import NavBar from '../components/NavBar';
 import MoneyPool from '../components/MoneyPool';
 import AuthService from '../services/AuthService';
+import Registration from "./Registration";
 
 // *** PAGES ***
 export default class Index extends React.Component {
@@ -16,7 +17,7 @@ export default class Index extends React.Component {
         console.log("itt");
         this.authService = new AuthService();
         this.authService.authenticate("hihi", "haha").then(r => this.setState(r));
-        console.log(this.state)
+        console.log(this.state);
         console.log(this.state.loggedIn);
         // this.setState({loggedIn:!this.state.loggedIn});
 
