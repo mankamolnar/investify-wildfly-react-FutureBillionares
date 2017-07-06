@@ -9,6 +9,7 @@ static/bundle.js.map
 
 # IntelliJ project files
 .idea
+.idea/
 *.iml
 out
 gen
