@@ -5,7 +5,6 @@ export default class MPoolService {
             request.open("GET", "/api/moneypool");
             request.onreadystatechange = () => {
                 let raw = request.responseText;
-                console.log(raw);
                 if (request.readyState==4 && request.status==200) {
                     try {
                         let objectified = JSON.parse(raw);

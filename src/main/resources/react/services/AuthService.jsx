@@ -5,11 +5,19 @@ export default class AuthService {
             request.open("GET", "/api/auth/"+username+"/"+password);
             request.onreadystatechange = () => {
                 let raw = request.responseText;
-                console.log(raw);
+
                 if (request.readyState==4 && request.status==200) {
-                    let objectified = JSON.parse(raw);
-                    resolve(objectified);
+
+                    raw = "{\"loggedIn\":true, \"user\":"+raw+"}";
+
+
+                } else {
+                    raw = "{\"loggedIn\":false}";
+
                 }
+
+                let objectified = JSON.parse(raw);
+                resolve(objectified);
             };
             request.send();
         });

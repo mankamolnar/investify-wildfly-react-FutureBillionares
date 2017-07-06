@@ -29,8 +29,10 @@ public class AuthenticatiorApi {
 
         users = userService.findAll();
         for (User user : users) {
-            if (user.getName().equals(username) && user.getPassword().equals(password));
-            return user;
+            if (user.getName().equals(username) && user.getPassword().equals(password)) {
+                return user;
+            }
+
         }
         return null;
 
