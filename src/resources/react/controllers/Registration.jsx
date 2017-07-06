@@ -32,7 +32,7 @@ export default class Registration extends React.Component {
             content = <RegistrationForm regState={this.state} registrate={this.registrate}/>
         } else {
             content = (<div className="alert alert-success">
-                <strong>Your registration was successfull!</strong></div>)
+                <strong>Your registration was successful!</strong></div>)
         }
 
         return (
