@@ -1,4 +1,4 @@
-package hu.standapp.investify.RESTful;
+package hu.standapp.investify.RESTAPI;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -11,6 +11,7 @@ public class ApplicationConfig extends Application {
     public ApplicationConfig() {
         HashSet<Class<?>> c = new HashSet<>();
         c.add(MoneyPoolApi.class);
+        c.add(AuthenticatiorApi.class);
         classes = Collections.unmodifiableSet(c);
     }
     @Override

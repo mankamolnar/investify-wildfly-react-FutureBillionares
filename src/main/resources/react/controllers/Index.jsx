@@ -16,8 +16,8 @@ export class Index extends React.Component {
     login() {
         console.log("itt");
         this.authService = new AuthService();
-        this.authService.authenticate("hihi", "haha").then(r => this.setState(r));
-        console.log(this.state)
+        this.authService.authenticate("mani", "hali").then(r => this.setState(r));
+        console.log(this.state);
         console.log(this.state.loggedIn);
         // this.setState({loggedIn:!this.state.loggedIn});
 

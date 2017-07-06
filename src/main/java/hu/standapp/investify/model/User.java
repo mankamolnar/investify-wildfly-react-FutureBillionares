@@ -74,4 +74,12 @@ public class User {
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

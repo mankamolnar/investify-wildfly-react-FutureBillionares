@@ -1,4 +1,4 @@
-package hu.standapp.investify.RESTful;
+package hu.standapp.investify.RESTAPI;
 
 import hu.standapp.investify.model.MoneyPool;
 import hu.standapp.investify.services.MoneyPoolService;
@@ -22,7 +22,6 @@ public class MoneyPoolApi {
         long id = 1;
         MoneyPool moneyPool = moneyPoolService.find(id);
         return moneyPool;
-        //        return Response.ok(moneyPool, MediaType.APPLICATION_JSON).build();
     }
 
 }
