@@ -60,7 +60,7 @@ export default class RegistrationForm extends React.Component {
 
         if (this.state.usernameError) {
             usernameError = (
-            <div className="alert alert-warning">
+            <div className="alert alert-danger half block-c small-bottom-margin">
                 <strong>Username is required!</strong> Please fill it and try again!
             <br/>
             </div>
@@ -69,7 +69,7 @@ export default class RegistrationForm extends React.Component {
 
         if (!this.props.regState.usernameOK) {
             usernameTakenError = (
-                <div className="alert alert-warning">
+                <div className="alert alert-danger half block-c small-bottom-margin">
                     <strong>Username is already taken!</strong> Please try again!
                     <br/>
                 </div>
@@ -78,7 +78,7 @@ export default class RegistrationForm extends React.Component {
 
         if (this.state.passwordError) {
             passwordError = (
-                <div className="alert alert-warning">
+                <div className="alert alert-danger half block-c small-bottom-margin">
                     <strong>Password is required!</strong> Please fill it and try again!
                     <br/>
                 </div>
@@ -86,7 +86,7 @@ export default class RegistrationForm extends React.Component {
         }
         if (this.state.passwordEqualityError) {
             passwordEqualityError = (
-                <div className="alert alert-warning">
+                <div className="alert alert-danger half block-c small-bottom-margin">
                     <strong>Passwords aren't equal!</strong> Please try again!
                     <br/>
                 </div>
@@ -94,7 +94,7 @@ export default class RegistrationForm extends React.Component {
         }
         if (this.state.emailError) {
             emailError = (
-                <div className="alert alert-warning">
+                <div className="alert alert-danger half block-c small-bottom-margin">
                     <strong>Email is required!</strong> Please fill it and try again!
                     <br/>
                 </div>
@@ -102,7 +102,7 @@ export default class RegistrationForm extends React.Component {
         }
         if (!this.props.regState.emailOK) {
             emailTakenError = (
-                <div className="alert alert-warning">
+                <div className="alert alert-danger half block-c small-bottom-margin">
                     <strong>Email is already taken!</strong> Please try again!
                     <br/>
                 </div>
