@@ -6,28 +6,17 @@ import AuthService from '../services/AuthService';
 import Registration from "./Registration";
 
 // *** PAGES ***
-export default class Index extends React.Component {
-    constructor() {
-        super();
-        this.state = {loggedIn:false};
-        this.login = this.login.bind(this)
-    }
 
-    login() {
-        console.log("itt");
-        this.authService = new AuthService();
-        this.authService.authenticate("hihi", "haha").then(r => this.setState(r));
-        console.log(this.state);
-        console.log(this.state.loggedIn);
-        // this.setState({loggedIn:!this.state.loggedIn});
-
+export class Index extends React.Component {
+    constructor(props) {
+        super(props);
     }
 
     render() {
         return (
             <div>
-                <NavBar loggedIn={this.state.loggedIn} login={this.login} />
-                <MoneyPool loggedIn={this.state.loggedIn} login={this.login} />
+                <NavBar loggedIn={this.props.loggedIn} />
+                <MoneyPool loggedIn={this.props.loggedIn} />
             </div>
         );
     }

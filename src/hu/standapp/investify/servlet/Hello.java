@@ -30,9 +30,9 @@ public class Hello extends HttpServlet {
                 "    <script type=\"text/javascript\" src=\"/static/react.js\"></script>\n" +
 //                "    <script type=\"text/javascript\" src=\"vendor/showdown.min.js\"></script>\n" +
                 "    <link href=\"https://bootswatch.com/sandstone/bootstrap.min.css\" rel=\"stylesheet\">\n" +
-                "<link href=\"/static/css/custom.css\" rel=\"stylesheet\">\n" +
-            "    <link href=\"/static/css/manuTable.css\" rel=\"stylesheet\">\n" +
-            "\n" +
+                "    <link href=\"/static/css/custom.css\" rel=\"stylesheet\">\n" +
+                "    <link href=\"/static/css/manuTable.css\" rel=\"stylesheet\">\n" +
+                "\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "<div id=\"app\"></div>\n" +
