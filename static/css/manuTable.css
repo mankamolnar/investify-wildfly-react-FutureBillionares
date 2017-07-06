@@ -83,3 +83,7 @@
 .clickable {
     cursor: pointer;
 }
+
+.small-bottom-margin {
+    margin-bottom:15px !important;
+}

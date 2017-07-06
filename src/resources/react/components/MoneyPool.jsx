@@ -29,14 +29,14 @@ export default class MoneyPool extends React.Component {
                     </p>
 
                     <form method="post" action="/collections/payin/1">
-                        <div className="td-4"></div>
-                        <div className="td-4 c">
+                        <div className="td-3"></div>
+                        <div className="td-3 c">
 
                             <a className="btn btn-info" href="/faq">F.A.Q.</a>{" "}
                             <a className="btn btn-success" href="/registration">I want to invest!</a>
 
                         </div>
-                        <div className="td-4"></div>
+                        <div className="td-3"></div>
                     </form>
                 </div>
             );
