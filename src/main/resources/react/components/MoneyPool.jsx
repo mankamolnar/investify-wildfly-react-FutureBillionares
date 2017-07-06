@@ -12,7 +12,6 @@ export class MoneyPool extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         while (this.state.goal == 0) {
             return (
                 <div className="loader"> </div>

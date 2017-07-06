@@ -118,4 +118,4 @@ modules.xml
 package-lock.json
 
 target/
-src/resources/META-INF/persistence.xml
+src/main/resources/META-INF/persistence.xml

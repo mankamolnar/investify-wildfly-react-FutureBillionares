@@ -1,6 +1,5 @@
 package hu.standapp.investify.servlet;
 
-import hu.standapp.investify.ExampleData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,8 +40,6 @@ public class Hello extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        ExampleData exampleData = ExampleData.getInstance();
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");

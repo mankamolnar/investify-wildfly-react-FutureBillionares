@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ public class MoneyPool {
     private int unitPrice;
     private int investors;
     @OneToMany(mappedBy = "moneyPool")
-    private List<Investment> investments;
+    private List<Investment> investments = new ArrayList<>();
 
     public MoneyPool() {
     }
@@ -41,9 +42,18 @@ public class MoneyPool {
         this.investors = investors;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     /**
      * Basic getters and setter for the MoneyPool.
      */
+
 
     public int getPayedIn() {
         return payedIn;
@@ -75,5 +85,13 @@ public class MoneyPool {
 
     public void setInvestors(int investors) {
         this.investors = investors;
+    }
+
+    public List<Investment> getInvestments() {
+        return investments;
+    }
+
+    public void setInvestments(List<Investment> investments) {
+        this.investments = investments;
     }
 }

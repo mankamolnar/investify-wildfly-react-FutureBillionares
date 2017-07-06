@@ -7,7 +7,7 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: "./src/resources/react/router.jsx",
+    entry: "./src/main/resources/react/router.jsx",
     output: {
         path: __dirname + '/static/',
         filename: "bundle.js"

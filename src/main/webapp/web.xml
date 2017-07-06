@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+    <servlet>
+        <servlet-name>hello</servlet-name>
+        <servlet-class>hu.standapp.investify.servlet.Hello</servlet-class>
+    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>apiauth</servlet-name>-->
+        <!--<servlet-class>hu.standapp.investify.servlet.ApiAuth</servlet-class>-->
+    <!--</servlet>-->
+    <!--&lt;!&ndash;<servlet>&ndash;&gt;-->
+        <!--&lt;!&ndash;<servlet-name>apimoneypool</servlet-name>&ndash;&gt;-->
+        <!--&lt;!&ndash;<servlet-clhu.standapp.investify.RESTful.servicesiMoneyPoolApivice</servlet-class>&ndash;&gt;-->
+    <!--&lt;!&ndash;</servlet>&ndash;&gt;-->
+    <!--<servlet>-->
+        <!--<servlet-name>apirandomshareholdsforsale</servlet-name>-->
+        <!--<servlet-class>hu.standapp.investify.servlet.ApiRandomShareholdsForSale</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>apiregistration</servlet-name>-->
+        <!--<servlet-class>hu.standapp.investify.servlet.ApiRegistration</servlet-class>-->
+    <!--</servlet>-->
+
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>apiauth</servlet-name>-->
+        <!--<url-pattern>/api/auth</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--&lt;!&ndash;<servlet-mapping>&ndash;&gt;-->
+        <!--&lt;!&ndash;<servlet-name>apimoneypool</servlet-name>&ndash;&gt;-->
+        <!--&lt;!&ndash;<url-pattern>/api/moneypool</url-pattern>&ndash;&gt;-->
+    <!--&lt;!&ndash;</servlet-mapping>&ndash;&gt;-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>apirandomshareholdsforsale</servlet-name>-->
+        <!--<url-pattern>/api/random-shareholds-for-sale</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>apiregistration</servlet-name>-->
+        <!--<url-pattern>/api/registration</url-pattern>-->
+    <!--</servlet-mapping>-->
+</web-app>
