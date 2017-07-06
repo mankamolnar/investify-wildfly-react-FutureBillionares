@@ -43,7 +43,7 @@ export class NavBar extends React.Component {
                     </div>
                     <div className="nav navbar-nav navbar-right">
                         <Link className="btn btn-success" to="/payin">Pay in</Link>
-                        <button className="btn btn-danger" onClick={this.props.login}>Log out</button>
+                        <Link className="btn btn-danger" to="/logout">Log out</Link>
                     </div>
                 </nav>
             );

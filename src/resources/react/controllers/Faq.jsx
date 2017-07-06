@@ -3,21 +3,14 @@ import {Link} from 'react-router';
 import {NavBar} from '../components/NavBar';
 // *** PAGES ***
 export class Faq extends React.Component {
-    constructor() {
-        super();
-        this.state = {loggedIn:false};
-        this.changeState = this.changeState.bind(this)
-    }
-
-    changeState() {
-        console.log(this.state.loggedIn);
-        this.setState({loggedIn:!this.state.loggedIn});
+    constructor(props) {
+        super(props);
     }
 
     render() {
         return (
             <div>
-                <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState} />
+                <NavBar loggedIn={this.state.loggedIn} />
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-1">
