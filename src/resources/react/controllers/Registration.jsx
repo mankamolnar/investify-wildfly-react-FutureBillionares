@@ -17,9 +17,15 @@ export default class Registration extends React.Component {
         this.setState({value: event.target.value});
     }
 
+    // handleSubmit(event) {
+    //     alert('A name was submitted: ' + this.state.value);
+    //     event.preventDefault();
+    // }
+
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
+        console.log("ITT");
+        let username = document.getElementById("username");
+        console.log(username);
     }
 
     changeState() {
@@ -28,7 +34,6 @@ export default class Registration extends React.Component {
     }
 
     render() {
-        console.log("ITT");
         return (
             <div>
                 <NavBar loggedIn={this.state.loggedIn} changeState={this.changeState}/>

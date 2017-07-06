@@ -16,7 +16,7 @@ export default class RegistrationForm extends React.Component {
                         Username
                     </div>
                     <div className="td-2">
-                        <input type="text" name="user" value={this.props.value} onChange={this.props.handleChange} className="form-control half"/>
+                        <input type="text" id="username" name="username" value={this.props.value} onChange={this.props.handleChange} className="form-control half"/>
                     </div>
 
                     <div className="td-2 title newline">
