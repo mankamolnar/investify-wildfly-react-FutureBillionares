@@ -20,8 +20,8 @@ export default class NavBar extends React.Component {
                         </ul>
                     </div>
                     <div className="mnavbar-right">
-                        <Link className="btn btn-info" role="button" to={"/registration"}>Registration</Link>
-                        <Link className="btn btn-success" to="/login">Login</Link>&nbsp;
+                        <Link className="btn btn-info" to="/registration">Registration</Link>{" "}
+                        <Link className="btn btn-success" to="/login">Login</Link>
                     </div>
                 </nav>
             );
@@ -41,8 +41,8 @@ export default class NavBar extends React.Component {
                             <li><a href="/collections">Money pools</a></li>
                         </ul>
                     </div>
-                    <div className="nav navbar-nav navbar-right">
-                        <Link className="btn btn-success" to="/payin">Pay in</Link>
+                    <div className="mnavbar-right">
+                        <Link className="btn btn-success" to="/payin">Pay in</Link>{" "}
                         <Link className="btn btn-danger" to="/logout">Log out</Link>
                     </div>
                 </nav>

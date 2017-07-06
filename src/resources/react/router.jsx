@@ -13,8 +13,7 @@ import Login from './controllers/Login'
 //     );
 // };
 
-class MainController extends React.Component {
-
+export default class MainController extends React.Component {
     constructor(props) {
         super(props);
         this.state = {loggedIn:false};
@@ -61,6 +60,7 @@ class MainController extends React.Component {
     static get FAQ() {
         return '/faq';
     }
+
     static get REGISTRATION() {
         return '/registration';
     }

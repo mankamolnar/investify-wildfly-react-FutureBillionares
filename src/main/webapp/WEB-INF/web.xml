@@ -46,6 +46,6 @@
 
     <servlet-mapping>
         <servlet-name>apiregistration</servlet-name>
-        <url-pattern>/registration</url-pattern>
+        <url-pattern>/api/registration</url-pattern>
     </servlet-mapping>
 </web-app>
