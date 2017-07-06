@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router'
 
-export class NavBar extends React.Component {
+export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -20,7 +20,7 @@ export class NavBar extends React.Component {
                         </ul>
                     </div>
                     <div className="mnavbar-right">
-                        <button className="btn btn-info">Registration</button>&nbsp;
+                        <Link className="btn btn-info" role="button" to={"/registration"}>Registration</Link>
                         <Link className="btn btn-success" to="/login">Login</Link>&nbsp;
                     </div>
                 </nav>

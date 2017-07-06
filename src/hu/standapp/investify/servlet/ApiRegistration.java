@@ -36,6 +36,12 @@ public class ApiRegistration extends HttpServlet {
 
     }
 
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws SecurityException, IOException, ServletException {
+        response.getWriter().println("<h1>success</h1>  ");
+        request.getServletContext().getRequestDispatcher("/WEB-INF/web.xml").include(request, response);
+    }
+
     public void destroy()
     {
         // do nothing.

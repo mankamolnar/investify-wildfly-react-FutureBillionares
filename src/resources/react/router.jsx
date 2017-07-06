@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory, Redirect } from 'react-router';
-import {Index} from './controllers/Index';
-import {Faq} from './controllers/Faq';
+import Index from './controllers/Index';
+import Faq from './controllers/Faq';
+import Registration from "./controllers/Registration";
 import Login from './controllers/Login'
 
 // var renderServer = function (comments) {
@@ -37,6 +38,9 @@ class MainController extends React.Component {
         } else if (path == MainController.FAQ) {
             page = <Faq loggedIn={this.state.loggedIn} mainControllerSetState={this.mainControllerSetState} />;
 
+        } else if (path == MainController.REGISTRATION) {
+            page = <Registration loggedIn={this.state.loggedIn} mainControllerSetState={this.mainControllerSetState} />;
+
         }
 
         return (
@@ -57,6 +61,9 @@ class MainController extends React.Component {
     static get FAQ() {
         return '/faq';
     }
+    static get REGISTRATION() {
+        return '/registration';
+    }
 }
 
 // *** ROUTER ***
@@ -66,6 +73,7 @@ ReactDOM.render((
         <Route path="/login" component={MainController} />
         <Route path="/logout" component={MainController} />
         <Route path="/faq" component={MainController} />
+        <Route path="/registration" component={MainController} />
     </Router>
 ), document.getElementById('app'));
 
