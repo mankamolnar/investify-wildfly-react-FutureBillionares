@@ -10,14 +10,15 @@ export default class AuthService {
 
                     raw = "{\"loggedIn\":true, \"user\":"+raw+"}";
 
-
-                } else {
+                } else if (request.readyState == 4 && request.status == 204) {
                     raw = "{\"loggedIn\":false}";
 
                 }
 
-                let objectified = JSON.parse(raw);
-                resolve(objectified);
+                if (request.readyState==4) {
+                    let objectified = JSON.parse(raw);
+                    resolve(objectified);
+                }
             };
             request.send();
         });

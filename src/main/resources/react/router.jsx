@@ -14,6 +14,7 @@ export default class MainController extends React.Component {
     }
 
     mainControllerSetState(newState) {
+        console.log(newState);
         if (!newState.loggedIn) {
             alert("Invalid username or password!");
         }

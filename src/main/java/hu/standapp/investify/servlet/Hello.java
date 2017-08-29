@@ -25,7 +25,7 @@ public class Hello extends HttpServlet {
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n" +
                 "<head>\n" +
                 "   <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">" +
-                "    <title>Hello React</title>\n" +
+                "    <title>Investify - Sharing is caring</title>\n" +
                 "    <script type=\"text/javascript\" src=\"/static/react.js\"></script>\n" +
 //                "    <script type=\"text/javascript\" src=\"vendor/showdown.min.js\"></script>\n" +
                 "    <link href=\"https://bootswatch.com/sandstone/bootstrap.min.css\" rel=\"stylesheet\">\n" +
